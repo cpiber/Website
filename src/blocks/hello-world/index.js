@@ -4,7 +4,6 @@ import { ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { blockBase, i18nDomain } from '../../config';
 import './editor.scss';
-import './style.scss';
 
 registerBlockType(`${blockBase}/hello-world`, {
     apiVersion: 2,

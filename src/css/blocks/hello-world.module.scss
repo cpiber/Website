@@ -1,0 +1,8 @@
+
+.block {
+    padding: 2px;
+
+    :global &.bg-fixed {
+        background-color: lightgray;
+    }
+}

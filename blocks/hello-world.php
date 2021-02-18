@@ -2,8 +2,16 @@
 
 namespace piber\template\blocks;
 
-class BlockHelloWorld {
-    static function render($props) {
-        return \var_export($props, true);
+class BlockHelloWorld extends Block {
+    public function __construct() {
+        self::loadModule("hello-world");
+    }
+
+    function renderBlock($props) {
+        \var_dump($props);
+        echo "<div class=\"";
+        echo self::$module->get_class_name('block');
+        echo $props['hasFixedBackground'] ? ' bg-fixed' : '';
+        echo "\">Hi!</div>";
     }
 }

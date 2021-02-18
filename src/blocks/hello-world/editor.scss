@@ -6,4 +6,8 @@
 
 .wp-block-theme-piber-hello-world {
 	padding: 12px 20px;
+
+    &.bg-fixed {
+        background-color: lightgray;
+    }
 }

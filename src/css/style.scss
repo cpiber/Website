@@ -1,0 +1,10 @@
+
+::placeholder {
+  color: gray;
+}
+
+body {
+  &:hover {
+    color: blue;
+  }
+}
