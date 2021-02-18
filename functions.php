@@ -98,7 +98,7 @@ function enqueue_scripts_styles() {
     \wp_set_script_translations("$script_base-frontend", THEME_PIBER_DOMAIN);
 
     $css = '/build/frontend/index.css';
-    if (file_exists($script_asset_path . $css)) {
+    if (file_exists($dir . $css)) {
         \wp_enqueue_style(
             "$script_base-frontend",
             \get_stylesheet_directory_uri() . $css,
@@ -108,7 +108,7 @@ function enqueue_scripts_styles() {
     }
 
     $css2 = '/build/frontend/style-index.css';
-    if (file_exists($script_asset_path . $css2)) {
+    if (file_exists($dir . $css2)) {
         \wp_enqueue_style(
             "$script_base-frontend2",
             \get_stylesheet_directory_uri() . $css2,
