@@ -133,7 +133,7 @@ function theme_setup() {
 class CSSModule {
     private $collection = array();
 
-    public function __construct($json_file) {
+    public function __construct(string $json_file) {
         if (!isset($json_file) || !file_exists($json_file)) {
             return false;
         }
@@ -141,7 +141,7 @@ class CSSModule {
         $this->collection = json_decode(file_get_contents($json_file), true);
     }
 
-    public function get_class_name($class_name) {
+    public function get_class_name(string $class_name): string {
         if (!isset($class_name) || !array_key_exists($class_name, $this->collection)) {
             return false;
         }

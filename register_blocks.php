@@ -8,7 +8,7 @@ function register_blocks($script_base) {
     $base = "theme-piber";
 
     $blocks = array(
-        'hello-world' => array(new BlockHelloWorld(), 'render'),
+        'hello-world' => new BlockHelloWorld(),
     );
 
     foreach ($blocks as $block => $render_callback) {
@@ -18,7 +18,7 @@ function register_blocks($script_base) {
                 'editor_script'   => "$script_base-block-editor",
                 'editor_style'    => "$script_base-block-editor",
                 'style'           => "$script_base-block",
-                'render_callback' => $render_callback,
+                'render_callback' => array($render_callback, 'render'),
             )
         );
     }
@@ -27,19 +27,24 @@ function register_blocks($script_base) {
 
 abstract class Block {
     private static $script_base = "theme-piber-module-";
-    protected static $module = null;
+    private static $modules = array(); // store for all blocks
+    protected ?\piber\template\CSSModule $module = null;
 
-    static function loadModule($name) {
-        if (self::$module !== null) {
+    function loadModule(string $name) {
+        if (\array_key_exists($name, self::$modules))
             return;
-        }
-        self::$module = new \piber\template\CSSModule(__DIR__ . "/build/css/blocks/$name.module.scss.json");
+        self::$modules[$name] = new \piber\template\CSSModule(__DIR__ . "/build/css/blocks/$name.module.scss.json");
+        $this->module = &self::$modules[$name];
         \wp_enqueue_style(
             self::$script_base . $name,
             \get_stylesheet_directory_uri() . "/build/css/blocks/$name.module.css",
             array(),
             filemtime(__DIR__ . "/build/css/blocks/$name.module.css")
         );
+    }
+
+    public static function get_class_name(string $module, string $class_name): string {
+        return self::$modules[$module]->get_class_name($class_name);
     }
 
     function render($props) {

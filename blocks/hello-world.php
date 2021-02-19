@@ -8,10 +8,9 @@ class BlockHelloWorld extends Block {
     }
 
     function renderBlock($props) {
+        $props = \array_merge(array(
+            
+        ), $props); // defaults
         \var_dump($props);
-        echo "<div class=\"";
-        echo self::$module->get_class_name('block');
-        echo $props['hasFixedBackground'] ? ' bg-fixed' : '';
-        echo "\">Hi!</div>";
     }
 }
