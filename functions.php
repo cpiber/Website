@@ -28,7 +28,8 @@ function block_init() {
         "$script_base-block-editor",
         \get_stylesheet_directory_uri() . $index_js,
         $script_asset['dependencies'],
-        $script_asset['version']
+        $script_asset['version'],
+        true
     );
     \wp_set_script_translations("$script_base-block-editor", THEME_PIBER_DOMAIN);
 
@@ -93,7 +94,8 @@ function enqueue_scripts_styles() {
         "$script_base-frontend",
         \get_stylesheet_directory_uri() . $index_js,
         $script_asset['dependencies'],
-        $script_asset['version']
+        $script_asset['version'],
+        true
     );
     \wp_set_script_translations("$script_base-frontend", THEME_PIBER_DOMAIN);
 
