@@ -1,0 +1,33 @@
+
+.block {
+    display: flex;
+    align-items: flex-start;
+
+    .asterisk {
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin-left: 16px;
+        margin-right: 12px;
+        font-size: 0.85em;
+        opacity: 0.8;
+
+        &::before, &::after {
+            opacity: 0.65;
+        }
+        &::before {
+            content: '[';
+        }
+        &::after {
+            content: ']';
+        }
+    }
+
+    .content p {
+        font-style: italic;
+        font-size: 0.85em;
+
+        i, em {
+            font-style: normal;
+        }
+    }
+}

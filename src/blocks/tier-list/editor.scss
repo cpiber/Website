@@ -1,0 +1,33 @@
+
+.wp-block-theme-piber-tier-list {
+    padding: 0 6px;
+    padding-top: 0;
+    
+    &.is-selected {
+        padding: 3px 6px;
+    }
+
+    .controls {
+        padding: 1px 5px;
+    }
+
+    > ul:empty {
+        display: none;
+    }
+}
+
+.tier-list-item {
+    padding: 4px;
+    list-style: none;
+    border: 1px solid lightgray;
+
+    button {
+        border: none;
+        margin: 0,;
+        padding: 0;
+        width: auto;
+        overflow: visible;
+        cursor: pointer;
+        background: transparent;
+    }
+}

@@ -50,5 +50,8 @@
     "react-native": ">=0.14.0",
     "rimraf": "^3.0.2",
     "sass": "^1.32.7"
+  },
+  "dependencies": {
+    "react-movable": "^2.5.3"
   }
 }

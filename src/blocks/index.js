@@ -1,2 +1,3 @@
 
-import './hello-world';
+import './tier-list';
+import './footnote';

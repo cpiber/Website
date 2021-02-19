@@ -1,4 +1,19 @@
 
-body {
-    padding: 8px;
+h2 {
+    margin-top: 48px;
+}
+
+i.asterisk {
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    width: 0.5em;
+
+    &::after {
+        content: '\2732';
+        position: absolute;
+        top: -0.5em;
+        left: 0;
+        font-size: 0.6em;
+    }
 }

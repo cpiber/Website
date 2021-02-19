@@ -1,3 +1,5 @@
+dependencies:
+  react-movable: 2.5.3_react-dom@16.14.0+react@16.14.0
 devDependencies:
   '@babel/core': 7.12.16
   '@babel/runtime': 7.12.13
@@ -2104,6 +2106,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lg55ArB+ZiHHbBBttLpzD07akz0QPrZgUODNakeC09i62dnrywr9mFErHuaPlB6I7z+sEbK+IYmplahvplCj2g==
+  /@types/node/14.14.30:
+    dev: true
+    optional: true
+    resolution:
+      integrity: sha512-gUWhy8s45fQp4PqqKecsnOkdW0kt1IaKjgOIR3HPokkzTmQj9ji2wWFID5THu1MKrtO+d4s2lVrlEhXUsPXSvg==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -2282,7 +2289,7 @@ packages:
       integrity: sha512-kQ5JNTrbDv3Rp5X2n/iUu37IJBDU2gsZ5R/g1/KHOOEc5IKfUFjXT6DENPGduh08I/pamwtEq4oul7gUqKTQDQ==
   /@types/yauzl/2.9.1:
     dependencies:
-      '@types/node': 14.14.28
+      '@types/node': 14.14.30
     dev: true
     optional: true
     resolution:
@@ -13258,6 +13265,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ZbOn/P4u469WEGAw5hgkS/E+g1YZqdves2BjYsLluJobzUZCtManhjHiZKjniBVT7MSHM6D/iKtRVzlXVv3ikA==
+  /react-movable/2.5.3_react-dom@16.14.0+react@16.14.0:
+    dependencies:
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+    dev: false
+    peerDependencies:
+      react: ^16.3.0-0 || ^17.0.0-0
+      react-dom: ^16.3.0-0 || ^17.0.0-0
+    resolution:
+      integrity: sha512-CazVL7eN4QTAEPwBlcp9101SAytzakpePa3b/lLpsTZyJn3z1uRbqiWA/NTQDjPvPj8h9ws8j8uUr8TBJTiJiw==
   /react-native-url-polyfill/1.2.0_react-native@0.63.4:
     dependencies:
       react-native: 0.63.4_react@16.14.0
@@ -17003,6 +17020,7 @@ specifiers:
   postcss-scss: ^3.0.4
   react: ^16.14.0
   react-dom: ^16.0.0-0
+  react-movable: ^2.5.3
   react-native: '>=0.14.0'
   rimraf: ^3.0.2
   sass: ^1.32.7
