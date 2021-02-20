@@ -31,7 +31,6 @@ function register_blocks($script_base) {
 
 
 abstract class Block {
-    private static $script_base = "theme-piber-module-";
     private static $modules = array(); // store for all blocks
     protected ?\piber\template\CSSModule $module = null;
 
@@ -40,12 +39,6 @@ abstract class Block {
             return;
         self::$modules[$name] = new \piber\template\CSSModule(__DIR__ . "/build/css/blocks/$name.module.scss.json");
         $this->module = &self::$modules[$name];
-        \wp_enqueue_style(
-            self::$script_base . $name,
-            \get_stylesheet_directory_uri() . "/build/css/blocks/$name.module.css",
-            array(),
-            filemtime(__DIR__ . "/build/css/blocks/$name.module.css")
-        );
     }
 
     public static function get_class_name(string $module, string $class_name): string {
