@@ -9,7 +9,7 @@ class BlockHelloWorld extends Block {
 
     function renderBlock($props) {
         $props = \array_merge(array(
-            
+            'className' => '',
         ), $props); // defaults
         \var_dump($props);
     }

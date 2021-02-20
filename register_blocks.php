@@ -49,7 +49,14 @@ abstract class Block {
 
     function render($props) {
         \ob_start();
-        $this->renderBlock($props);
+        $class = $this->module->get_class_name('block');
+        if (\array_key_exists('className', $props)) $class .= " " . $props['className'];
+        ?><div class="<?php echo $class ?>"><?php
+        if ($this->renderBlock($props) === false) {
+            \ob_end_clean();
+            return "";
+        }
+        ?></div><?php
         return \ob_get_clean();
     }
 
