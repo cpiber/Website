@@ -21,4 +21,17 @@ module.exports = {
         ...defaultConfig.module,
         rules,
     },
+    optimization: {
+        ...defaultConfig.optimization,
+        splitChunks: {
+            ...defaultConfig.optimization.splitChunks,
+            cacheGroups: {
+                ...defaultConfig.optimization.splitChunks.cacheGroups,
+                style: {
+                    ...defaultConfig.optimization.splitChunks.cacheGroups.style,
+                    test: /[\\/]style(\.module)?\.(sc|sa|c)ss$/
+                }
+            }
+        }
+    }
 };

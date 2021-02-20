@@ -42,7 +42,7 @@ function block_init() {
     );
 
     $style_css = '/build/blocks/style-index.css';
-    if (file_exists($script_asset_path . $style_css)) {
+    if (file_exists($dir . $style_css)) {
         \wp_register_style(
             "$script_base-block",
             \get_stylesheet_directory_uri() . $style_css,
