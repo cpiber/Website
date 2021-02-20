@@ -3,14 +3,13 @@
 namespace piber\template\blocks;
 
 require "blocks/tier-list.php";
-require "blocks/footnote.php";
 
 function register_blocks($script_base) {
     $base = "theme-piber";
 
     $blocks = array(
         'tier-list' => new BlockTierList(),
-        'footnote'  => new BlockFootnote(),
+        'footnote'  => null,
     );
 
     foreach ($blocks as $block => $render_callback) {

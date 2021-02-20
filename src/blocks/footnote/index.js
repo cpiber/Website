@@ -3,7 +3,8 @@ import { registerBlockType } from '@wordpress/blocks';
 import { Flex, FlexBlock, FlexItem } from "@wordpress/components";
 import { __ } from '@wordpress/i18n';
 import { blockBase, i18nDomain } from '../../config';
-import './editor.scss';
+import { pre } from './editor.module.scss';
+import { block, asterisk, content } from "./style.module.scss";
 
 registerBlockType(`${blockBase}/footnote`, {
     apiVersion: 2,
@@ -18,12 +19,14 @@ registerBlockType(`${blockBase}/footnote`, {
     category: 'widgets',
     icon: 'warning',
     supports: {
-        html: false,
+        // html: false,
     },
     attributes: {
         text: {
             type: 'string',
             default: '',
+            source: 'html',
+            selector: 'p'
         }
     },
     edit: ({ attributes, setAttributes }) => {
@@ -31,7 +34,7 @@ registerBlockType(`${blockBase}/footnote`, {
         const { text } = attributes;
         return (
             <Flex {...blockProps}>
-                <FlexItem className='pre'>[&#10034;]</FlexItem>
+                <FlexItem className={pre}>[&#10034;]</FlexItem>
                 <FlexBlock>
                     <RichText
                         value={text}
@@ -44,7 +47,16 @@ registerBlockType(`${blockBase}/footnote`, {
         );
     },
     save: ({ attributes }) => {
+        const blockProps = useBlockProps.save();
         const { text } = attributes;
-        return <RichText.Content value={text || ''} tagName='p'></RichText.Content>
+        blockProps.className += ` ${block}`;
+        return (
+            <div {...blockProps}>
+                <p className={asterisk}>&#10034;</p>
+                <div className={content}>
+                    <RichText.Content value={text || ''} tagName='p'></RichText.Content>
+                </div>
+            </div>
+        );
     },
 });

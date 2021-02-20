@@ -1,10 +1,10 @@
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { arrayMove, arrayRemove, List } from 'react-movable';
 import { blockBase, i18nDomain } from '../../config';
-import './editor.scss';
+import { block, item, controls } from './editor.module.scss';
 import { Tier } from './tier';
 
 
@@ -32,6 +32,7 @@ registerBlockType(`${blockBase}/tier-list`, {
     edit: ({ attributes, setAttributes, isSelected }) => {
         const blockProps = useBlockProps();
         const { list } = attributes;
+        blockProps.className += ` ${block}`;
         return (
             <div {...blockProps}>
                 {/* <h2>{__('Tier List', i18nDomain)}</h2> */}
@@ -43,7 +44,7 @@ registerBlockType(`${blockBase}/tier-list`, {
                     }
                     renderList={({ children, props }) => <ul {...props}>{children}</ul>}
                     renderItem={({ value, props, index, isDragged }) =>
-                        <li {...props} className='tier-list-item'>
+                        <li {...props} className={item}>
                             <Tier
                                 value={value}
                                 isDragged={isDragged}
@@ -59,7 +60,7 @@ registerBlockType(`${blockBase}/tier-list`, {
                     }
                 />
                 { (isSelected || (!isSelected && list.length === 0)) && (
-                    <div class="controls">
+                    <div class={controls}>
                         <Button isPrimary onClick={ () => setAttributes({ list: [...list, {}] })}>{__('Add Element', i18nDomain)}</Button>
                         {list.length !== 0 && <Button isLink isDestructive isSmall onClick={ () => setAttributes({ list: [] })}>{__('Clear', i18nDomain)}</Button>}
                     </div>
