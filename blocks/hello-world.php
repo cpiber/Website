@@ -7,7 +7,7 @@ class BlockHelloWorld extends Block {
         self::loadModule("hello-world");
     }
 
-    function renderBlock($props) {
+    function renderBlock($props, $content) {
         $props = \array_merge(array(
             'className' => '',
         ), $props); // defaults
