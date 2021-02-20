@@ -1,0 +1,7 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+    <defs>
+        <symbol id="line-segment" viewbox="0 0 8 30">
+            <path d="m2 0l4 0q2 0 2 2l0 26q0 2-2 2l-4 0q-2 0-2-2l0-26q0-2 2-2" />
+        </symbol>
+    </defs>
+</svg>

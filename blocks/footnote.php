@@ -9,15 +9,13 @@ class BlockFootnote extends Block {
 
     function renderBlock($props) {
         $props = \array_merge(array(
-            'text' => ''
+            'text'      => '',
         ), $props); // defaults
         if (trim($props['text']) === '')
-            return;
+            return false;
         
         ?>
-        <div class="<?php echo $this->module->get_class_name('block') ?>">
-            <p class="<?php echo $this->module->get_class_name('asterisk') ?>">&#10034;</p>
-            <div class="<?php echo $this->module->get_class_name('content') ?>"><p><?php echo $props['text'] ?></p></div>
-        </div>
+        <p class="<?php echo $this->module->get_class_name('asterisk') ?>">&#10034;</p>
+        <div class="<?php echo $this->module->get_class_name('content') ?>"><p><?php echo $props['text'] ?></p></div>
     <?php }
 }

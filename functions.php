@@ -126,6 +126,11 @@ function theme_setup() {
 }
 \add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup');
 
+function footer() {
+    \fpassthru(\fopen(__DIR__ . "/icons.svg", 'rb'));
+}
+\add_action('wp_footer', __NAMESPACE__ . '\footer', 99);
+
 
 
 /**
