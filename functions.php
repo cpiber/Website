@@ -118,6 +118,16 @@ function enqueue_scripts_styles() {
             filemtime("$dir/$css2")
         );
     }
+
+    $modules = '/build/css/modules.css';
+    if (file_exists($dir . $modules)) {
+        \wp_enqueue_style(
+            "$script_base-modules",
+            \get_stylesheet_directory_uri() . $modules,
+            array(),
+            filemtime("$dir/$modules")
+        );
+    }
 }
 \add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts_styles');
 
@@ -125,6 +135,11 @@ function theme_setup() {
     load_child_theme_textdomain(THEME_PIBER_DOMAIN, get_stylesheet_directory() . '/languages');
 }
 \add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup');
+
+function footer() {
+    \fpassthru(\fopen(__DIR__ . "/icons.svg", 'rb'));
+}
+\add_action('wp_footer', __NAMESPACE__ . '\footer', 99);
 
 
 
