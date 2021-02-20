@@ -1,4 +1,4 @@
-import { useBlockProps } from '@wordpress/block-editor';
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';

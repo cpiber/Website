@@ -7,7 +7,7 @@ class BlockFootnote extends Block {
         $this->loadModule("footnote");
     }
 
-    function renderBlock($props) {
+    function renderBlock($props, $content) {
         $props = \array_merge(array(
             'text'      => '',
         ), $props); // defaults
@@ -16,6 +16,6 @@ class BlockFootnote extends Block {
         
         ?>
         <p class="<?php echo $this->module->get_class_name('asterisk') ?>">&#10034;</p>
-        <div class="<?php echo $this->module->get_class_name('content') ?>"><p><?php echo $props['text'] ?></p></div>
+        <div class="<?php echo $this->module->get_class_name('content') ?>"><?php echo $content ?></div>
     <?php }
 }

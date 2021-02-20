@@ -14,14 +14,18 @@ function register_blocks($script_base) {
     );
 
     foreach ($blocks as $block => $render_callback) {
+        $atts = array(
+            'editor_script'   => "$script_base-block-editor",
+            'editor_style'    => "$script_base-block-editor",
+            'style'           => "$script_base-block",
+        );
+        if (\is_string($render_callback) || \is_array($render_callback))
+            $atts['render_callback'] = $render_callback; // function or scope
+        elseif ($render_callback !== null)
+            $atts['render_callback'] = array($render_callback, 'render'); // Block instance
         \register_block_type(
             "$base/$block",
-            array(
-                'editor_script'   => "$script_base-block-editor",
-                'editor_style'    => "$script_base-block-editor",
-                'style'           => "$script_base-block",
-                'render_callback' => array($render_callback, 'render'),
-            )
+            $atts
         );
     }
 }
@@ -49,12 +53,12 @@ abstract class Block {
         return self::$modules[$module]->get_class_name($class_name);
     }
 
-    function render($props) {
+    function render(array $props, string $content) {
         \ob_start();
         $class = $this->module->get_class_name('block');
         if (\array_key_exists('className', $props)) $class .= " " . $props['className'];
         ?><div class="<?php echo $class ?>"><?php
-        if ($this->renderBlock($props) === false) {
+        if ($this->renderBlock($props, $content) === false) {
             \ob_end_clean();
             return "";
         }
@@ -62,5 +66,5 @@ abstract class Block {
         return \ob_get_clean();
     }
 
-    abstract protected function renderBlock($props);
+    abstract protected function renderBlock(array $props, string $content);
 }

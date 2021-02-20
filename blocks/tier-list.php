@@ -7,7 +7,7 @@ class BlockTierList extends Block {
         $this->loadModule("tier-list");
     }
 
-    function renderBlock($props) {
+    function renderBlock($props, $content) {
         if (!\array_key_exists('list', $props))
             return false;
         $id = "tier-line-" . uniqid();

@@ -42,5 +42,9 @@ registerBlockType(`${blockBase}/footnote`, {
                 </FlexBlock>
             </Flex>
         );
-    }
+    },
+    save: ({ attributes }) => {
+        const { text } = attributes;
+        return <RichText.Content value={text || ''} tagName='p'></RichText.Content>
+    },
 });
