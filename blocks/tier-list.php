@@ -1,6 +1,6 @@
 <?php
 
-namespace piber\template\blocks;
+namespace piber\website\blocks;
 
 class BlockTierList extends Block {
     public function __construct() {

@@ -1,6 +1,6 @@
 <?php
 
-namespace piber\template\blocks;
+namespace piber\website\blocks;
 
 require "blocks/tier-list.php";
 
@@ -32,12 +32,12 @@ function register_blocks($script_base) {
 
 abstract class Block {
     private static $modules = array(); // store for all blocks
-    protected ?\piber\template\CSSModule $module = null;
+    protected ?\piber\website\CSSModule $module = null;
 
     function loadModule(string $name) {
         if (\array_key_exists($name, self::$modules))
             return;
-        self::$modules[$name] = new \piber\template\CSSModule(__DIR__ . "/build/css/blocks/$name.module.scss.json");
+        self::$modules[$name] = new \piber\website\CSSModule(__DIR__ . "/build/css/blocks/$name.module.scss.json");
         $this->module = &self::$modules[$name];
     }
 

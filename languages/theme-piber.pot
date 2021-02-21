@@ -1,0 +1,73 @@
+# Copyright (C) 2021 C. Piber
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Website Piber 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Website\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-02-21T14:28:12+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: theme-piber\n"
+
+#. Theme Name of the theme
+msgid "Website Piber"
+msgstr ""
+
+#. Description of the theme
+msgid "Mik Theme Child"
+msgstr ""
+
+#. Author of the theme
+msgid "C. Piber"
+msgstr ""
+
+#: functions.php:22
+#: functions.php:88
+msgid "You need to run `npm start` or `npm run build` first."
+msgstr ""
+
+#: build/blocks/index.js:1117
+#: build/blocks/index.js:1183
+msgid "Footnote"
+msgstr ""
+
+#: build/blocks/index.js:1118
+msgid "Puts an asterisk and small text."
+msgstr ""
+
+#: build/blocks/index.js:1126
+msgid "Some Footnote text"
+msgstr ""
+
+#: build/blocks/index.js:1269
+msgid "Remove"
+msgstr ""
+
+#: build/blocks/index.js:1358
+msgid "Tier List"
+msgstr ""
+
+#: build/blocks/index.js:1359
+msgid "List of tiers."
+msgstr ""
+
+#: build/blocks/index.js:1428
+msgid "Add Element"
+msgstr ""
+
+#: build/blocks/index.js:1437
+msgid "Clear"
+msgstr ""
+
+#: build/blocks/index.js:1493
+msgid "Tier"
+msgstr ""
+
+#: build/blocks/index.js:1500
+msgid "Description"
+msgstr ""
