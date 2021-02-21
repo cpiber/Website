@@ -2,7 +2,8 @@
 
 namespace piber\template;
 
-define('THEME_PIBER_DOMAIN', 'theme-piber');
+\define('piber\THEME_PIBER_DOMAIN', 'theme-piber');
+\define('piber\THEME_PIBER_L_PATH', __DIR__ . '/languages');
 
 require "register_blocks.php";
 
@@ -31,7 +32,7 @@ function block_init() {
         $script_asset['version'],
         true
     );
-    \wp_set_script_translations("$script_base-block-editor", THEME_PIBER_DOMAIN);
+    \wp_set_script_translations("$script_base-block-editor", \piber\THEME_PIBER_DOMAIN, \piber\THEME_PIBER_L_PATH);
 
     $editor_css = '/build/blocks/index.css';
     \wp_register_style(
@@ -97,7 +98,7 @@ function enqueue_scripts_styles() {
         $script_asset['version'],
         true
     );
-    \wp_set_script_translations("$script_base-frontend", THEME_PIBER_DOMAIN);
+    \wp_set_script_translations("$script_base-frontend", \piber\THEME_PIBER_DOMAIN, \piber\THEME_PIBER_L_PATH);
 
     $css = '/build/frontend/index.css';
     if (file_exists($dir . $css)) {
@@ -132,9 +133,34 @@ function enqueue_scripts_styles() {
 \add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts_styles');
 
 function theme_setup() {
-    load_child_theme_textdomain(THEME_PIBER_DOMAIN, get_stylesheet_directory() . '/languages');
+    load_child_theme_textdomain(\piber\THEME_PIBER_DOMAIN, get_stylesheet_directory() . '/languages');
 }
 \add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup');
+
+function script_translation_file($file, $handle, $domain) {
+    $d = 'default' === $domain ? '' : $domain . '-';
+    $matches = null;
+    if (\is_readable($file) || !\preg_match("/^(.*${d}de)_[A-Z]{2}(?:_formal)?(-(?:$handle|[a-f0-9]{32})\.(?:json|mo))$/", $file, $matches))
+        return $file;
+    return $matches[1] . $matches[2]; // fallback to de
+}
+\add_filter('load_script_translation_file', __NAMESPACE__ . '\script_translation_file', 10, 3);
+
+function textdomain_mofile($file, $domain) {
+    $matches = null;
+    if (\is_readable($file) || !\preg_match("/^((.*\/)(${domain}-)?de)(_[A-Z]{2}(?:_formal)?)\.mo$/", $file, $matches))
+        return $file;
+    $file = $matches[2] . $domain . "-de" . $matches[4] . ".mo"; // insert domain (themes don't include domain)
+    if ($matches[3] === "" && \is_readable($file))
+        return $file;
+    $file = $matches[1] . ".mo"; // fallback to de
+    if (\is_readable($file))
+        return $file;
+    $file = $matches[2] . $domain . "-de.mo"; // fallback with domain
+    if ($matches[3] === "" && \is_readable($file))
+        return $file;
+}
+\add_filter('load_textdomain_mofile', __NAMESPACE__ . '\textdomain_mofile', 10, 2);
 
 function footer() {
     \fpassthru(\fopen(__DIR__ . "/icons.svg", 'rb'));
