@@ -140,7 +140,7 @@ function theme_setup() {
 function script_translation_file($file, $handle, $domain) {
     $d = 'default' === $domain ? '' : $domain . '-';
     $matches = null;
-    if (\is_readable($file) || !\preg_match("/^(.*${d}de)_[A-Z]{2}(?:_formal)?(-(?:$handle|[a-f0-9]{32})\.(?:json|mo))$/", $file, $matches))
+    if (\is_readable($file) || !\preg_match("/^(.*\/${d}de)_[A-Z]{2}(?:_formal)?(-(?:$handle|[a-f0-9]{32})\.json)$/", $file, $matches))
         return $file;
     return $matches[1] . $matches[2]; // fallback to de
 }
