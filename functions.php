@@ -169,6 +169,18 @@ function footer() {
 }
 \add_action('wp_footer', __NAMESPACE__ . '\footer', 99);
 
+function after_switch_theme() {
+    \add_role('demo', __('Demo', \piber\THEME_PIBER_DOMAIN), get_role('administrator')->capabilities);
+}
+\add_action('after_switch_theme', __NAMESPACE__ . '\after_switch_theme');
+
+function query($query) {
+    if (\in_array('demo', \wp_get_current_user()->roles) && !\preg_match("/^\\s*(SELECT|SHOW)/i", $query))
+        return null; // demo role may not change anything
+    return $query;
+}
+\add_filter('query', __NAMESPACE__ . '\query');
+
 
 
 /**
