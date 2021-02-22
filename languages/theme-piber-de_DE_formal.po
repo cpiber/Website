@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Website Piber 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Website\n"
-"POT-Creation-Date: 2021-02-21T14:28:12+01:00\n"
-"PO-Revision-Date: 2021-02-21 14:51+0100\n"
+"POT-Creation-Date: 2021-02-22T16:36:38+01:00\n"
+"PO-Revision-Date: 2021-02-22 16:38+0100\n"
 "Last-Translator: Constantin Piber <cp.piber@gmail.com>\n"
 "Language-Team: \n"
 "Language: de_DE@formal\n"
@@ -27,46 +27,56 @@ msgstr "Kind-Theme von Mik"
 msgid "C. Piber"
 msgstr "C. Piber"
 
-#: functions.php:22 functions.php:88
+#: functions.php:23 functions.php:89
 msgid "You need to run `npm start` or `npm run build` first."
 msgstr "Sie müssen `npm start` oder `npm run build` zuerst ausführen."
 
-#: build/blocks/index.js:1117 build/blocks/index.js:1183
-msgid "Footnote"
-msgstr "Fußnote"
+#. translators: Demo user role name
+#: functions.php:174
+msgid "Demo"
+msgstr ""
 
-#: build/blocks/index.js:1118
-msgid "Puts an asterisk and small text."
-msgstr "Zeigt einen Stern an und gibt kleinen Text aus."
+#. translators: Message on login screen with username and password for demo user
+#: functions.php:193
+msgid "For a demo user, login with username %1$s and password %1$s"
+msgstr "Für eine Demo können Sie sich mit dem Demo-User einloggen. Benutzername: %1$s, Password: %1$s"
 
-#: build/blocks/index.js:1126
-msgid "Some Footnote text"
-msgstr "Fußnoten-text"
-
-#: build/blocks/index.js:1269
+#: build/blocks/index.js:1
 msgid "Remove"
 msgstr "Entfernen"
 
-#: build/blocks/index.js:1358
-msgid "Tier List"
-msgstr "Stufen-Liste"
-
-#: build/blocks/index.js:1359
-msgid "List of tiers."
-msgstr "Eine Liste an Stufen."
-
-#: build/blocks/index.js:1428
-msgid "Add Element"
-msgstr "Hinzufügen"
-
-#: build/blocks/index.js:1437
-msgid "Clear"
-msgstr "Leeren"
-
-#: build/blocks/index.js:1493
+#: build/blocks/index.js:1
 msgid "Tier"
 msgstr "Stufe"
 
-#: build/blocks/index.js:1500
+#: build/blocks/index.js:1
 msgid "Description"
 msgstr "Beschreibung"
+
+#: build/blocks/index.js:1
+msgid "Tier List"
+msgstr "Stufen-Liste"
+
+#: build/blocks/index.js:1
+msgid "List of tiers."
+msgstr "Eine Liste an Stufen."
+
+#: build/blocks/index.js:1
+msgid "Add Element"
+msgstr "Hinzufügen"
+
+#: build/blocks/index.js:1
+msgid "Clear"
+msgstr "Leeren"
+
+#: build/blocks/index.js:1
+msgid "Footnote"
+msgstr "Fußnote"
+
+#: build/blocks/index.js:1
+msgid "Puts an asterisk and small text."
+msgstr "Zeigt einen Stern an und gibt kleinen Text aus."
+
+#: build/blocks/index.js:1
+msgid "Some Footnote text"
+msgstr "Fußnoten-text"

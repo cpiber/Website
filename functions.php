@@ -170,16 +170,33 @@ function footer() {
 \add_action('wp_footer', __NAMESPACE__ . '\footer', 99);
 
 function after_switch_theme() {
+    /* translators: Demo user role name */
     \add_role('demo', __('Demo', \piber\THEME_PIBER_DOMAIN), get_role('administrator')->capabilities);
+    \wp_insert_user(array(
+        'user_login'    => 'demo',
+        'user_pass'     => 'demo',
+        'role'          => 'demo',
+    ));
 }
 \add_action('after_switch_theme', __NAMESPACE__ . '\after_switch_theme');
 
 function query($query) {
-    if (\in_array('demo', \wp_get_current_user()->roles) && !\preg_match("/^\\s*(SELECT|SHOW)/i", $query))
+    if (\preg_match("/^\\s*(SELECT|SHOW)/i", $query))
+        return $query; // always allow retrieval
+    if (\get_current_user_id() !== 0 && \in_array('demo', \wp_get_current_user()->roles))
         return null; // demo role may not change anything
     return $query;
 }
 \add_filter('query', __NAMESPACE__ . '\query');
+
+function login_errors(\WP_Error $errors) {
+    $errors->add('demo',
+        /* translators: Message on login screen with username and password for demo user */
+        sprintf(__('For a demo user, login with username %1$s and password %1$s', \piber\THEME_PIBER_DOMAIN), '<code>demo</code>'),
+        'message');
+    return $errors;
+}
+\add_filter('wp_login_errors', __NAMESPACE__ . '\login_errors');
 
 
 

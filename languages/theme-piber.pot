@@ -9,10 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-21T14:28:12+01:00\n"
+"POT-Creation-Date: 2021-02-22T16:36:38+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: theme-piber\n"
 
 #. Theme Name of the theme
 msgid "Website Piber"
@@ -26,48 +25,57 @@ msgstr ""
 msgid "C. Piber"
 msgstr ""
 
-#: functions.php:22
-#: functions.php:88
+#: functions.php:23
+#: functions.php:89
 msgid "You need to run `npm start` or `npm run build` first."
 msgstr ""
 
-#: build/blocks/index.js:1117
-#: build/blocks/index.js:1183
-msgid "Footnote"
+#. translators: Demo user role name
+#: functions.php:174
+msgid "Demo"
 msgstr ""
 
-#: build/blocks/index.js:1118
-msgid "Puts an asterisk and small text."
+#. translators: Message on login screen with username and password for demo user
+#: functions.php:193
+msgid "For a demo user, login with username %1$s and password %1$s"
 msgstr ""
 
-#: build/blocks/index.js:1126
-msgid "Some Footnote text"
-msgstr ""
-
-#: build/blocks/index.js:1269
+#: build/blocks/index.js:1
 msgid "Remove"
 msgstr ""
 
-#: build/blocks/index.js:1358
-msgid "Tier List"
-msgstr ""
-
-#: build/blocks/index.js:1359
-msgid "List of tiers."
-msgstr ""
-
-#: build/blocks/index.js:1428
-msgid "Add Element"
-msgstr ""
-
-#: build/blocks/index.js:1437
-msgid "Clear"
-msgstr ""
-
-#: build/blocks/index.js:1493
+#: build/blocks/index.js:1
 msgid "Tier"
 msgstr ""
 
-#: build/blocks/index.js:1500
+#: build/blocks/index.js:1
 msgid "Description"
+msgstr ""
+
+#: build/blocks/index.js:1
+msgid "Tier List"
+msgstr ""
+
+#: build/blocks/index.js:1
+msgid "List of tiers."
+msgstr ""
+
+#: build/blocks/index.js:1
+msgid "Add Element"
+msgstr ""
+
+#: build/blocks/index.js:1
+msgid "Clear"
+msgstr ""
+
+#: build/blocks/index.js:1
+msgid "Footnote"
+msgstr ""
+
+#: build/blocks/index.js:1
+msgid "Puts an asterisk and small text."
+msgstr ""
+
+#: build/blocks/index.js:1
+msgid "Some Footnote text"
 msgstr ""

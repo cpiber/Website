@@ -11,6 +11,7 @@ console.log('test');
 registerBlockType(`${blockBase}/footnote`, {
     apiVersion: 2,
     title: __(
+        /* translators: Footnote block title */
         'Footnote',
         i18nDomain
     ),
@@ -25,6 +26,7 @@ registerBlockType(`${blockBase}/footnote`, {
     // },
     example: {
         attributes: {
+            /* translators: Footnote block example */
             text: `<p>${__('Some Footnote text', i18nDomain)}</p>`,
         },
     },
