@@ -6,8 +6,6 @@ import { blockBase, i18nDomain } from '../../config';
 import { pre } from './editor.module.scss';
 import { block, asterisk, content } from "./style.module.scss";
 
-console.log('test');
-
 registerBlockType(`${blockBase}/footnote`, {
     apiVersion: 2,
     title: __(

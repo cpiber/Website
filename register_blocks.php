@@ -32,7 +32,8 @@ function register_blocks($script_base) {
 
 abstract class Block {
     private static $modules = array(); // store for all blocks
-    protected ?\piber\website\CSSModule $module = null;
+    // protected ?\piber\website\CSSModule $module = null;
+    protected $module = null;
 
     function loadModule(string $name) {
         if (\array_key_exists($name, self::$modules))
