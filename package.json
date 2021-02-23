@@ -17,6 +17,7 @@
     "start:blocks": "wp-scripts start src/blocks/index.js --output-path=build/blocks",
     "start:css": "gulp sassmodules:watch",
     "packages-update": "wp-scripts packages-update",
+    "pack": "npm-pack-zip",
     "clean": "rimraf build"
   },
   "author": "",
@@ -42,6 +43,7 @@
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "npm-pack-zip": "^1.2.7",
     "postcss": "^8.2.6",
     "postcss-cli": "^8.3.1",
     "postcss-modules": "^4.0.0",
