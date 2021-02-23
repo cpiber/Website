@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-02-22T16:36:38+01:00\n"
+"POT-Creation-Date: 2021-02-23T17:42:19+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 
@@ -25,6 +25,10 @@ msgstr ""
 msgid "C. Piber"
 msgstr ""
 
+#: blocks/index.php:21
+msgid "Index"
+msgstr ""
+
 #: functions.php:23
 #: functions.php:89
 msgid "You need to run `npm start` or `npm run build` first."
@@ -36,46 +40,158 @@ msgid "Demo"
 msgstr ""
 
 #. translators: Message on login screen with username and password for demo user
-#: functions.php:193
+#: functions.php:195
 msgid "For a demo user, login with username %1$s and password %1$s"
 msgstr ""
 
-#: build/blocks/index.js:1
-msgid "Remove"
-msgstr ""
-
-#: build/blocks/index.js:1
-msgid "Tier"
-msgstr ""
-
-#: build/blocks/index.js:1
-msgid "Description"
-msgstr ""
-
-#: build/blocks/index.js:1
-msgid "Tier List"
-msgstr ""
-
-#: build/blocks/index.js:1
-msgid "List of tiers."
-msgstr ""
-
-#: build/blocks/index.js:1
-msgid "Add Element"
-msgstr ""
-
-#: build/blocks/index.js:1
-msgid "Clear"
-msgstr ""
-
-#: build/blocks/index.js:1
+#: build/blocks/index.js:1118
+msgctxt "block title"
 msgid "Footnote"
 msgstr ""
 
-#: build/blocks/index.js:1
+#: build/blocks/index.js:1119
 msgid "Puts an asterisk and small text."
 msgstr ""
 
-#: build/blocks/index.js:1
+#. translators: Footnote block example
+#: build/blocks/index.js:1128
 msgid "Some Footnote text"
+msgstr ""
+
+#: build/blocks/index.js:1155
+msgctxt "placeholder"
+msgid "Footnote"
+msgstr ""
+
+#: build/blocks/index.js:1288
+msgid "Remove"
+msgstr ""
+
+#: build/blocks/index.js:1361
+msgctxt "block title"
+msgid "Index"
+msgstr ""
+
+#: build/blocks/index.js:1362
+msgid "Displays all children of selected page as an index."
+msgstr ""
+
+#: build/blocks/index.js:1416
+msgid "Ordering"
+msgstr ""
+
+#: build/blocks/index.js:1418
+msgctxt "Label for selecting order of posts"
+msgid "Order by"
+msgstr ""
+
+#: build/blocks/index.js:1421
+msgid "ID"
+msgstr ""
+
+#: build/blocks/index.js:1424
+msgid "Title"
+msgstr ""
+
+#: build/blocks/index.js:1427
+msgid "Name"
+msgstr ""
+
+#: build/blocks/index.js:1430
+msgid "Date"
+msgstr ""
+
+#: build/blocks/index.js:1433
+msgid "Modified"
+msgstr ""
+
+#: build/blocks/index.js:1436
+msgid "Menu order"
+msgstr ""
+
+#: build/blocks/index.js:1445
+msgctxt "Label for selecting order of posts"
+msgid "Order"
+msgstr ""
+
+#: build/blocks/index.js:1448
+msgid "Descending"
+msgstr ""
+
+#: build/blocks/index.js:1451
+msgid "Ascending"
+msgstr ""
+
+#: build/blocks/index.js:1496
+#: build/blocks/index.js:1510
+msgid "Loading"
+msgstr ""
+
+#: build/blocks/index.js:1496
+msgid "No Post Types found"
+msgstr ""
+
+#: build/blocks/index.js:1497
+msgctxt "Label for post type selector"
+msgid "Post Type"
+msgstr ""
+
+#: build/blocks/index.js:1501
+msgid "Select a post type"
+msgstr ""
+
+#: build/blocks/index.js:1510
+msgid "No posts found"
+msgstr ""
+
+#: build/blocks/index.js:1511
+msgctxt "Label for selecting post"
+msgid "Post to index children of"
+msgstr ""
+
+#: build/blocks/index.js:1515
+msgid "Select a post"
+msgstr ""
+
+#: build/blocks/index.js:1519
+msgid "Top level"
+msgstr ""
+
+#: build/blocks/index.js:1588
+msgid "Tier List"
+msgstr ""
+
+#: build/blocks/index.js:1589
+msgid "List of tiers."
+msgstr ""
+
+#: build/blocks/index.js:1595
+#: build/blocks/index.js:1598
+msgid "Title {0}"
+msgid_plural "Title {0}"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/blocks/index.js:1596
+msgid "Some text"
+msgstr ""
+
+#: build/blocks/index.js:1599
+msgid "Some more text"
+msgstr ""
+
+#: build/blocks/index.js:1667
+msgid "Add Element"
+msgstr ""
+
+#: build/blocks/index.js:1676
+msgid "Clear"
+msgstr ""
+
+#: build/blocks/index.js:1732
+msgid "Tier"
+msgstr ""
+
+#: build/blocks/index.js:1739
+msgid "Description"
 msgstr ""

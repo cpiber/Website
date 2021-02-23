@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Website Piber 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Website\n"
-"POT-Creation-Date: 2021-02-22T16:36:38+01:00\n"
-"PO-Revision-Date: 2021-02-22 16:38+0100\n"
+"POT-Creation-Date: 2021-02-23T17:42:19+01:00\n"
+"PO-Revision-Date: 2021-02-23 17:45+0100\n"
 "Last-Translator: Constantin Piber <cp.piber@gmail.com>\n"
 "Language-Team: \n"
 "Language: de_DE@formal\n"
@@ -27,6 +27,10 @@ msgstr "Kind-Theme von Mik"
 msgid "C. Piber"
 msgstr "C. Piber"
 
+#: blocks/index.php:21
+msgid "Index"
+msgstr ""
+
 #: functions.php:23 functions.php:89
 msgid "You need to run `npm start` or `npm run build` first."
 msgstr "Sie müssen `npm start` oder `npm run build` zuerst ausführen."
@@ -37,46 +41,158 @@ msgid "Demo"
 msgstr ""
 
 #. translators: Message on login screen with username and password for demo user
-#: functions.php:193
+#: functions.php:195
 msgid "For a demo user, login with username %1$s and password %1$s"
-msgstr "Für eine Demo können Sie sich mit dem Demo-User einloggen. Benutzername: %1$s, Password: %1$s"
+msgstr ""
+"Für eine Demo können Sie sich mit dem Demo-User einloggen. Benutzername: "
+"%1$s, Password: %1$s"
 
-#: build/blocks/index.js:1
-msgid "Remove"
-msgstr "Entfernen"
-
-#: build/blocks/index.js:1
-msgid "Tier"
-msgstr "Stufe"
-
-#: build/blocks/index.js:1
-msgid "Description"
-msgstr "Beschreibung"
-
-#: build/blocks/index.js:1
-msgid "Tier List"
-msgstr "Stufen-Liste"
-
-#: build/blocks/index.js:1
-msgid "List of tiers."
-msgstr "Eine Liste an Stufen."
-
-#: build/blocks/index.js:1
-msgid "Add Element"
-msgstr "Hinzufügen"
-
-#: build/blocks/index.js:1
-msgid "Clear"
-msgstr "Leeren"
-
-#: build/blocks/index.js:1
+#: build/blocks/index.js:1118
+msgctxt "block title"
 msgid "Footnote"
 msgstr "Fußnote"
 
-#: build/blocks/index.js:1
+#: build/blocks/index.js:1119
 msgid "Puts an asterisk and small text."
 msgstr "Zeigt einen Stern an und gibt kleinen Text aus."
 
-#: build/blocks/index.js:1
+#. translators: Footnote block example
+#: build/blocks/index.js:1128
 msgid "Some Footnote text"
 msgstr "Fußnoten-text"
+
+#: build/blocks/index.js:1155
+msgctxt "placeholder"
+msgid "Footnote"
+msgstr "Fußnote"
+
+#: build/blocks/index.js:1288
+msgid "Remove"
+msgstr "Entfernen"
+
+#: build/blocks/index.js:1361
+msgctxt "block title"
+msgid "Index"
+msgstr ""
+
+#: build/blocks/index.js:1362
+msgid "Displays all children of selected page as an index."
+msgstr "Zeit alle Kinder der gewählten Seite als Index an."
+
+#: build/blocks/index.js:1416
+msgid "Ordering"
+msgstr "Sortierung"
+
+#: build/blocks/index.js:1418
+msgctxt "Label for selecting order of posts"
+msgid "Order by"
+msgstr "Sortieren nach"
+
+#: build/blocks/index.js:1421
+msgid "ID"
+msgstr ""
+
+#: build/blocks/index.js:1424
+msgid "Title"
+msgstr "Titel"
+
+#: build/blocks/index.js:1427
+msgid "Name"
+msgstr ""
+
+#: build/blocks/index.js:1430
+msgid "Date"
+msgstr "Datum"
+
+#: build/blocks/index.js:1433
+msgid "Modified"
+msgstr "Geändert"
+
+#: build/blocks/index.js:1436
+msgid "Menu order"
+msgstr "Menü Reihenfolge"
+
+#: build/blocks/index.js:1445
+msgctxt "Label for selecting order of posts"
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: build/blocks/index.js:1448
+msgid "Descending"
+msgstr "Absteigend"
+
+#: build/blocks/index.js:1451
+msgid "Ascending"
+msgstr "Aufsteigend"
+
+#: build/blocks/index.js:1496 build/blocks/index.js:1510
+msgid "Loading"
+msgstr "Lädt"
+
+#: build/blocks/index.js:1496
+msgid "No Post Types found"
+msgstr "Keine Beitragstypen gefunden"
+
+#: build/blocks/index.js:1497
+msgctxt "Label for post type selector"
+msgid "Post Type"
+msgstr "Beitragstyp"
+
+#: build/blocks/index.js:1501
+msgid "Select a post type"
+msgstr "Beitragstyp auswählen"
+
+#: build/blocks/index.js:1510
+msgid "No posts found"
+msgstr "Keine Beiträge gefunden"
+
+#: build/blocks/index.js:1511
+msgctxt "Label for selecting post"
+msgid "Post to index children of"
+msgstr "Beitrag, für den Kinder angezeigt werden sollen"
+
+#: build/blocks/index.js:1515
+msgid "Select a post"
+msgstr "Beitrag auswählen"
+
+#: build/blocks/index.js:1519
+msgid "Top level"
+msgstr "Hauptebene"
+
+#: build/blocks/index.js:1588
+msgid "Tier List"
+msgstr "Stufen-Liste"
+
+#: build/blocks/index.js:1589
+msgid "List of tiers."
+msgstr "Eine Liste an Stufen."
+
+#: build/blocks/index.js:1595 build/blocks/index.js:1598
+msgid "Title {0}"
+msgid_plural "Title {0}"
+msgstr[0] "Titel"
+msgstr[1] "Titel"
+
+#: build/blocks/index.js:1596
+msgid "Some text"
+msgstr "Text"
+
+#: build/blocks/index.js:1599
+msgid "Some more text"
+msgstr "Mehr text"
+
+#: build/blocks/index.js:1667
+msgid "Add Element"
+msgstr "Hinzufügen"
+
+#: build/blocks/index.js:1676
+msgid "Clear"
+msgstr "Leeren"
+
+#: build/blocks/index.js:1732
+msgid "Tier"
+msgstr "Stufe"
+
+#: build/blocks/index.js:1739
+msgid "Description"
+msgstr "Beschreibung"
