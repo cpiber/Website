@@ -8,7 +8,6 @@ import { block, controls, item } from './editor.module.scss';
 import { Tier } from './tier';
 import transforms from "./transforms";
 
-
 registerBlockType(`${blockBase}/tier-list`, {
     apiVersion: 2,
     title: __(

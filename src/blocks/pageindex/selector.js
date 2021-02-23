@@ -25,10 +25,11 @@ export const Selector = ({ posttype, posttypes, pages, pageid, onChangeType, onC
                 { posttype && pages && pages.length === 0 && __('No posts found', i18nDomain) }
                 { posttype && pages && pages.length > 0 && (
                     <SelectControl
-                        label={_x('Post', 'Label for selecting post', i18nDomain)}
+                        label={_x('Post to index children of', 'Label for selecting post', i18nDomain)}
                         value={pageid || -1}
                         options={[
                             { value: -1, label: __('Select a post', i18nDomain), disabled: true },
+                            { value: 0, label: __('Top level', i18nDomain) },
                             ...pages.map(p => ({ label: p.title.rendered || `(#${p.id})`, value: p.id }))
                         ]}
                         onChange={onChangeId}

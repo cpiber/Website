@@ -26,16 +26,20 @@ registerBlockType(`${blockBase}/index`, {
         pageid: {
             type: 'number',
         },
-        order: {
+        orderby: {
             type: 'string',
             default: 'ID',
+        },
+        order: {
+            type: 'string',
+            default: 'DESC',
         },
     },
     edit: withSelect(select => ({
         posttypes: select('core').getEntitiesByKind('postType'),
     }))(({ attributes, setAttributes, posttypes }) => {
         const blockProps = useBlockProps();
-        const { posttype, pageid, order } = attributes;
+        const { posttype, pageid, orderby, order } = attributes;
         if (posttypes)
             posttypes = posttypes.filter(p => p.name !== 'attachment' && p.name != 'wp_block');
         const pages = useSelect(select => select('core').getEntityRecords('postType', posttype), [posttype]);
@@ -54,7 +58,7 @@ registerBlockType(`${blockBase}/index`, {
                     <PanelBody title={__('Ordering', i18nDomain)}>
                         <SelectControl
                             label={_x('Order by', 'Label for selecting order of posts', i18nDomain)}
-                            value={order}
+                            value={orderby}
                             options={[
                                 { label: __('ID', i18nDomain), value: 'ID' },
                                 { label: __('Title', i18nDomain), value: 'title' },
@@ -62,6 +66,15 @@ registerBlockType(`${blockBase}/index`, {
                                 { label: __('Date', i18nDomain), value: 'date' },
                                 { label: __('Modified', i18nDomain), value: 'modified' },
                                 { label: __('Menu order', i18nDomain), value: 'menu_order' },
+                            ]}
+                            onChange={o => setAttributes({ orderby: o })}
+                            />
+                        <SelectControl
+                            label={_x('Order', 'Label for selecting order of posts', i18nDomain)}
+                            value={order}
+                            options={[
+                                { label: __('Descending', i18nDomain), value: 'DESC' },
+                                { label: __('Ascending', i18nDomain), value: 'ASC' },
                             ]}
                             onChange={o => setAttributes({ order: o })}
                             />
