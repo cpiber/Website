@@ -5,13 +5,16 @@ devDependencies:
   '@babel/runtime': 7.12.13
   '@types/wordpress__block-editor': 2.2.9_react-dom@16.14.0+react@16.14.0
   '@types/wordpress__blocks': 6.4.12_react@16.14.0
+  '@types/wordpress__element': 2.14.1
   '@wordpress/block-editor': 5.2.7_bc2261ff1fed9be5afbcab2bd0f4b58f
   '@wordpress/blocks': 7.0.3_react@16.14.0
   '@wordpress/components': 12.0.6_39db5ba3e16738ac466ff50917da4ffe
   '@wordpress/compose': 3.24.3_react@16.14.0
   '@wordpress/data': 4.26.6_react@16.14.0
+  '@wordpress/element': 2.19.1
   '@wordpress/env': 3.0.2
   '@wordpress/i18n': 3.18.0
+  '@wordpress/icons': 2.9.1
   '@wordpress/scripts': 13.0.3_fb353715d393e916f2842af92932813a
   concurrently: 5.3.0
   fibers: 5.0.0
@@ -1128,6 +1131,18 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8+3UMPBrjFa/6TtKi/7sehPKqfAm4g6K+YQjyyFOLUTxzOngcRZTlAVY8sc2CORJYqdHQY8gRPHmn+qo15rCBw==
+  /@babel/runtime/7.13.4:
+    dependencies:
+      regenerator-runtime: 0.13.7
+    dev: true
+    resolution:
+      integrity: sha512-pZLFG10nRL1hPF9J0/WdxjVuLEanSge8W3Ct+Kls9fNhD4vOi9bhuAU8DdNARvBE9GTg6UhQFcEIF1XhIZd9ZA==
+  /@babel/runtime/7.13.6:
+    dependencies:
+      regenerator-runtime: 0.13.7
+    dev: true
+    resolution:
+      integrity: sha512-Y/DEVhSQ91u27rxq7D0EH/sewS6+x06p/MgO1VppbDHMzYXLZrAR5cFjCom78e9RUw1BQAq6qJg6fXc/ep7glA==
   /@babel/template/7.12.13:
     dependencies:
       '@babel/code-frame': 7.12.13
@@ -2109,11 +2124,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lg55ArB+ZiHHbBBttLpzD07akz0QPrZgUODNakeC09i62dnrywr9mFErHuaPlB6I7z+sEbK+IYmplahvplCj2g==
-  /@types/node/14.14.30:
+  /@types/node/14.14.31:
     dev: true
     optional: true
     resolution:
-      integrity: sha512-gUWhy8s45fQp4PqqKecsnOkdW0kt1IaKjgOIR3HPokkzTmQj9ji2wWFID5THu1MKrtO+d4s2lVrlEhXUsPXSvg==
+      integrity: sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -2256,6 +2271,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fnydzm3/c5VbcPJkd9lXjboS6v+9LyUlu/Sz9mYQE81Pbv8feAj2Okg9/R8MnBQpWU3IQd7tEIc/8vtAz3WweQ==
+  /@types/wordpress__element/2.14.1:
+    dependencies:
+      '@wordpress/element': 2.19.1
+    deprecated: This is a stub types definition. wordpress__element provides its own type definitions, so you do not need this installed.
+    dev: true
+    resolution:
+      integrity: sha512-qMp7A1r4Fdnm36FgSIQpwZ39CY6DDEfb2P4TfaLHoaSeZcPBdzs4hdhmIRrThX/W9AqOQYmGHyZ8RMzjg88KEg==
   /@types/wordpress__keycodes/2.3.1:
     dev: true
     resolution:
@@ -2292,7 +2314,7 @@ packages:
       integrity: sha512-kQ5JNTrbDv3Rp5X2n/iUu37IJBDU2gsZ5R/g1/KHOOEc5IKfUFjXT6DENPGduh08I/pamwtEq4oul7gUqKTQDQ==
   /@types/yauzl/2.9.1:
     dependencies:
-      '@types/node': 14.14.30
+      '@types/node': 14.14.31
     dev: true
     optional: true
     resolution:
@@ -2779,11 +2801,11 @@ packages:
       integrity: sha512-w95LZR98sqmxkXm5RtynXi+/tIb5vw2gSBAWlbc0OHhZkC2DC9oy6QDR0pthUUYCa3NJht4KMyhBbwN/cePq8w==
   /@wordpress/element/2.19.1:
     dependencies:
-      '@babel/runtime': 7.12.13
+      '@babel/runtime': 7.13.6
       '@types/react': 16.14.4
       '@types/react-dom': 16.9.11
       '@wordpress/escape-html': 1.11.1
-      lodash: 4.17.20
+      lodash: 4.17.21
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
     dev: true
@@ -2809,7 +2831,7 @@ packages:
       integrity: sha512-AE4FD8z1Tm3Os64vGpLjlbIdPAaUL8PcWKo7cscscaPpyHjF7XXisA8BHdwlNa0wowCdpOZgV8p+mntp/VexwQ==
   /@wordpress/escape-html/1.11.1:
     dependencies:
-      '@babel/runtime': 7.12.13
+      '@babel/runtime': 7.13.6
     dev: true
     resolution:
       integrity: sha512-kthpdAijVY1tSGnSy1kuKM5+L/u7uxzSBNDusqKcfeSgczfHlfKwkkA82SMHzsSR/WicXDaWBfcEMqfb4PENiQ==
@@ -2865,7 +2887,7 @@ packages:
       integrity: sha512-e1uFWhWYnT0B6s3hyy+xS0S3bwabrvkZA84xxitiIcQvGnZDUPntqv6M9+VrgJVlmd2MR2TbCGJ5xKFAVFr/gA==
   /@wordpress/icons/2.9.1:
     dependencies:
-      '@babel/runtime': 7.12.13
+      '@babel/runtime': 7.13.4
       '@wordpress/element': 2.19.1
       '@wordpress/primitives': 1.11.1
     dev: true
@@ -17289,13 +17311,16 @@ specifiers:
   '@babel/runtime': ^7.12.13
   '@types/wordpress__block-editor': ^2.2.9
   '@types/wordpress__blocks': ^6.4.12
+  '@types/wordpress__element': ^2.14.1
   '@wordpress/block-editor': ^5.2.7
   '@wordpress/blocks': ^7.0.3
   '@wordpress/components': ^12.0.6
   '@wordpress/compose': ^3.24.3
   '@wordpress/data': ^4.26.6
+  '@wordpress/element': ^2.19.1
   '@wordpress/env': ^3.0.2
   '@wordpress/i18n': ^3.18.0
+  '@wordpress/icons': ^2.9.1
   '@wordpress/scripts': ^13.0.3
   concurrently: ^5.3.0
   fibers: ^5.0.0

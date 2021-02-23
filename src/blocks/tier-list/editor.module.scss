@@ -11,8 +11,14 @@
         padding: 1px 5px;
     }
 
-    > ul:empty {
-        display: none;
+    &:global(.wp-block-theme-piber-tier-list) > ul {
+        margin-left: 0;
+        padding-left: 0;
+        list-style-type: none;
+
+        &:empty {
+            display: none;
+        }
     }
 }
 

@@ -3,7 +3,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { Flex, FlexBlock, FlexItem } from '@wordpress/components';
 import { _x, __ } from '@wordpress/i18n';
 import { blockBase, i18nDomain } from '../../config';
-import { pre } from './editor.module.scss';
+import { pre, content as eContent } from './editor.module.scss';
 import { asterisk, block, content } from './style.module.scss';
 import transforms from './transforms';
 
@@ -44,7 +44,7 @@ registerBlockType(`${blockBase}/footnote`, {
         return (
             <Flex {...blockProps}>
                 <FlexItem className={pre}>[&#10034;]</FlexItem>
-                <FlexBlock>
+                <FlexBlock className={eContent}>
                     <RichText
                         value={text}
                         tagName='p'
@@ -56,9 +56,10 @@ registerBlockType(`${blockBase}/footnote`, {
         );
     },
     save: ({ attributes }) => {
-        const blockProps = useBlockProps.save();
+        const blockProps = useBlockProps.save({
+            className: block
+        });
         const { text } = attributes;
-        blockProps.className += ` ${block}`;
         return (
             <div {...blockProps}>
                 <p className={asterisk}>&#10034;</p>

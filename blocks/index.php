@@ -18,7 +18,6 @@ class BlockIndex extends Block {
             'order'         => \array_key_exists('order', $props) ? $props['order'] : 'DESC',
         ));
         ?>
-        <h2 class="<?php $this->module->get_class_name('title') ?>"><?php \_e('Index', \piber\THEME_PIBER_DOMAIN) ?></h2>
         <ul class="<?php $this->module->get_class_name('content') ?> block-index--list"><?php
             foreach ($posts as $post) { ?>
                 <li><a href="<?php \get_permalink($post) ?>"><?php echo $post->post_title ?></a></li>
