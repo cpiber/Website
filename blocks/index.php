@@ -20,7 +20,7 @@ class BlockIndex extends Block {
         ?>
         <ul class="<?php $this->module->get_class_name('content') ?> block-index--list"><?php
             foreach ($posts as $post) { ?>
-                <li><a href="<?php \get_permalink($post) ?>"><?php echo $post->post_title ?></a></li>
+                <li><a href="<?php \the_permalink($post) ?>"><?php echo $post->post_title ?></a></li>
             <?php }
         ?></ul>
     <?php }
