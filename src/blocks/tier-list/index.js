@@ -1,11 +1,12 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { Button } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import { _n, __ } from '@wordpress/i18n';
 import { arrayMove, arrayRemove, List } from 'react-movable';
 import { blockBase, i18nDomain } from '../../config';
-import { block, item, controls } from './editor.module.scss';
+import { block, controls, item } from './editor.module.scss';
 import { Tier } from './tier';
+import transforms from "./transforms";
 
 
 registerBlockType(`${blockBase}/tier-list`, {
@@ -20,9 +21,21 @@ registerBlockType(`${blockBase}/tier-list`, {
     ),
     category: 'widgets',
     icon: 'editor-ol',
-    supports: {
-        html: false,
+    example: {
+        attributes: {
+            list: [
+                {
+                    title: _n('Title {0}', 'Title {0}', 1, i18nDomain).format(1),
+                    text: __('Some text', i18nDomain)
+                },
+                {
+                    title: _n('Title {0}', 'Title {0}', 2, i18nDomain).format(2),
+                    text: __('Some more text', i18nDomain)
+                },
+            ],
+        },
     },
+    transforms,
     attributes: {
         list: {
             type: 'array',
@@ -61,8 +74,8 @@ registerBlockType(`${blockBase}/tier-list`, {
                 />
                 { (isSelected || (!isSelected && list.length === 0)) && (
                     <div class={controls}>
-                        <Button isPrimary onClick={ () => setAttributes({ list: [...list, {}] })}>{__('Add Element', i18nDomain)}</Button>
-                        {list.length !== 0 && <Button isLink isDestructive isSmall onClick={ () => setAttributes({ list: [] })}>{__('Clear', i18nDomain)}</Button>}
+                        <Button isPrimary onClick={() => setAttributes({ list: [...list, {}] })}>{__('Add Element', i18nDomain)}</Button>
+                        {list.length !== 0 && <Button isLink isDestructive isSmall onClick={() => setAttributes({ list: [] })}>{__('Clear', i18nDomain)}</Button>}
                     </div>
                 )}
             </div>

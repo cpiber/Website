@@ -1,16 +1,17 @@
 import { RichText, useBlockProps } from '@wordpress/block-editor';
-import { registerBlockType, createBlock } from '@wordpress/blocks';
-import { Flex, FlexBlock, FlexItem } from "@wordpress/components";
-import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { Flex, FlexBlock, FlexItem } from '@wordpress/components';
+import { _x, __ } from '@wordpress/i18n';
 import { blockBase, i18nDomain } from '../../config';
 import { pre } from './editor.module.scss';
-import { block, asterisk, content } from "./style.module.scss";
+import { asterisk, block, content } from './style.module.scss';
+import transforms from './transforms';
 
 registerBlockType(`${blockBase}/footnote`, {
     apiVersion: 2,
-    title: __(
-        /* translators: Footnote block title */
+    title: _x(
         'Footnote',
+        'block title',
         i18nDomain
     ),
     description: __(
@@ -28,40 +29,7 @@ registerBlockType(`${blockBase}/footnote`, {
             text: `<p>${__('Some Footnote text', i18nDomain)}</p>`,
         },
     },
-    transforms: {
-        from: [
-            {
-                type: 'block',
-                blocks: ['core/paragraph'],
-                transform: ({ content: text }) => {
-                    return createBlock(`${blockBase}/footnote`, {
-                        text,
-                    });
-                },
-            },
-            {
-                type: 'prefix',
-                prefix: '*',
-                transform: text => {
-                    return createBlock(`${blockBase}/footnote`, {
-                        text: `<p>${text}</p>`,
-                    });
-                },
-                priority: 5,
-            }
-        ],
-        to: [
-            {
-                type: 'block',
-                blocks: ['core/paragraph'],
-                transform: ({ text }) => {
-                    return createBlock('core/paragraph', {
-                        content: text,
-                    });
-                },
-            }
-        ]
-    },
+    transforms,
     attributes: {
         text: {
             type: 'string',
@@ -81,7 +49,7 @@ registerBlockType(`${blockBase}/footnote`, {
                         value={text}
                         tagName='p'
                         onChange={val => setAttributes({ text: val })}
-                        placeholder={__('Footnote', i18nDomain)}
+                        placeholder={_x('Footnote', 'placeholder', i18nDomain)}
                     ></RichText>
                 </FlexBlock>
             </Flex>

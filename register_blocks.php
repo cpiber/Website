@@ -10,6 +10,7 @@ function register_blocks($script_base) {
     $blocks = array(
         'tier-list' => new BlockTierList(),
         'footnote'  => null,
+        'index'     => null,
     );
 
     foreach ($blocks as $block => $render_callback) {
