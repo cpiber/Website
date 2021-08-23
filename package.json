@@ -51,7 +51,6 @@
     "postcss-scss": "^3.0.4",
     "react": "^16.14.0",
     "react-dom": "^16.0.0-0",
-    "react-native": ">=0.14.0",
     "rimraf": "^3.0.2",
     "sass": "^1.32.7"
   }
