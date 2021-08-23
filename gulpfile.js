@@ -3,9 +3,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
 const concat = require('gulp-concat');
 
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const Fiber = require('fibers');
-sass.compiler = require('sass');
 
 const postcss = require('gulp-postcss')
 const postcssPresetEnv = require('postcss-preset-env');
