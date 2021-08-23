@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Website Piber 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Website\n"
-"POT-Creation-Date: 2021-02-23T20:28:08+01:00\n"
-"PO-Revision-Date: 2021-02-23 20:29+0100\n"
+"POT-Creation-Date: 2021-08-23T21:19:57+02:00\n"
+"PO-Revision-Date: 2021-08-23 21:23+0200\n"
 "Last-Translator: Constantin Piber <cp.piber@gmail.com>\n"
 "Language-Team: \n"
 "Language: de_DE@formal\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Theme Name of the theme
@@ -27,63 +27,117 @@ msgstr "Kind-Theme von Mik"
 msgid "C. Piber"
 msgstr "C. Piber"
 
-#: functions.php:23 functions.php:89
+#: functions.php:22 functions.php:88
 msgid "You need to run `npm start` or `npm run build` first."
 msgstr "Sie müssen `npm start` oder `npm run build` zuerst ausführen."
 
 #. translators: Demo user role name
-#: functions.php:174
+#: functions.php:178
 msgid "Demo"
 msgstr ""
 
 #. translators: Message on login screen with username and password for demo user
-#: functions.php:195
+#: functions.php:199
 msgid "For a demo user, login with username %1$s and password %1$s"
 msgstr ""
 "Für eine Demo können Sie sich mit dem Demo-User einloggen. Benutzername: "
 "%1$s, Password: %1$s"
 
 #: build/blocks/index.js:1
-msgid "Remove"
-msgstr "Entfernen"
+msgid "Input"
+msgstr ""
 
 #: build/blocks/index.js:1
-msgid "Tier"
-msgstr "Stufe"
+msgctxt "Accordion type label."
+msgid "Type"
+msgstr "Beitragstyp"
 
 #: build/blocks/index.js:1
-msgid "Description"
-msgstr "Beschreibung"
+msgctxt "Accordion name label."
+msgid "Name"
+msgstr ""
 
 #: build/blocks/index.js:1
-msgid "Tier List"
-msgstr "Stufen-Liste"
+msgctxt "Accordion default open label."
+msgid "Default Open"
+msgstr "Standardmäßig öffnen"
 
 #: build/blocks/index.js:1
-msgid "List of tiers."
-msgstr "Eine Liste an Stufen."
+msgid "Hide content when not selected"
+msgstr "Inhalt verstecken wenn nicht angewählt"
 
 #: build/blocks/index.js:1
-msgid "Title {0}"
-msgid_plural "Title {0}"
-msgstr[0] "Titel"
-msgstr[1] "Titel"
+msgid "Title background and content border"
+msgstr "Titel Hintergrund und Inhalt Rand"
 
 #: build/blocks/index.js:1
-msgid "Some text"
-msgstr "Text"
+msgctxt "block title"
+msgid "Accordion"
+msgstr ""
 
 #: build/blocks/index.js:1
-msgid "Some more text"
-msgstr "Mehr text"
+msgid "Expandable accordion."
+msgstr "Ausklappbares Accordion."
+
+#: build/blocks/index.js:1 build/blocks/index.js:3
+msgid "Title"
+msgstr "Titel"
 
 #: build/blocks/index.js:1
-msgid "Add Element"
-msgstr "Hinzufügen"
+msgctxt "download icon panel title"
+msgid "Icon"
+msgstr ""
 
 #: build/blocks/index.js:1
-msgid "Clear"
-msgstr "Leeren"
+msgid "Use Dashicon"
+msgstr "Dashicon verwenden"
+
+#: build/blocks/index.js:1
+msgid "Select icon"
+msgstr "Icon auswählen"
+
+#: build/blocks/index.js:1
+msgctxt "border panel title"
+msgid "Border"
+msgstr "Umrandung"
+
+#: build/blocks/index.js:1
+msgid "Border style"
+msgstr "Umrahmungsstil"
+
+#: build/blocks/index.js:1
+msgid "Hidden"
+msgstr "Versteckt"
+
+#: build/blocks/index.js:1
+msgid "Solid"
+msgstr "Solide"
+
+#: build/blocks/index.js:1
+msgid "Dashed"
+msgstr "Gestrichelt"
+
+#: build/blocks/index.js:1
+msgid "Dotted"
+msgstr "Gepunktet"
+
+#: build/blocks/index.js:1
+msgctxt "block title"
+msgid "Download"
+msgstr "Herunterladen"
+
+#: build/blocks/index.js:1
+msgid "Provides a nice download with an icon."
+msgstr "Erstellt einen Download-Link mit Icon."
+
+#: build/blocks/index.js:1
+msgid "Open in new tab"
+msgstr "In neuem Tab öffnen"
+
+#: build/blocks/index.js:1
+msgctxt "placeholder"
+msgid "Filename"
+msgstr "Dateiname"
 
 #: build/blocks/index.js:1
 msgctxt "block title"
@@ -103,6 +157,48 @@ msgstr "Fußnoten-text"
 msgctxt "placeholder"
 msgid "Footnote"
 msgstr "Fußnote"
+
+#: build/blocks/index.js:3
+msgid "Ordering"
+msgstr "Sortierung"
+
+#: build/blocks/index.js:3
+msgctxt "Label for selecting order of posts"
+msgid "Order by"
+msgstr "Sortieren nach"
+
+#: build/blocks/index.js:3
+msgid "ID"
+msgstr ""
+
+#: build/blocks/index.js:3
+msgid "Name"
+msgstr ""
+
+#: build/blocks/index.js:3
+msgid "Date"
+msgstr "Datum"
+
+#: build/blocks/index.js:3
+msgid "Modified"
+msgstr "Geändert"
+
+#: build/blocks/index.js:3
+msgid "Menu order"
+msgstr "Menü Reihenfolge"
+
+#: build/blocks/index.js:3
+msgctxt "Label for selecting order of posts"
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: build/blocks/index.js:3
+msgid "Descending"
+msgstr "Absteigend"
+
+#: build/blocks/index.js:3
+msgid "Ascending"
+msgstr "Aufsteigend"
 
 #: build/blocks/index.js:3
 msgid "Loading"
@@ -148,103 +244,47 @@ msgid "Displays all children of selected page as an index."
 msgstr "Zeit alle Kinder der gewählten Seite als Index an."
 
 #: build/blocks/index.js:3
-msgid "Ordering"
-msgstr "Sortierung"
+msgid "Remove"
+msgstr "Entfernen"
 
 #: build/blocks/index.js:3
-msgctxt "Label for selecting order of posts"
-msgid "Order by"
-msgstr "Sortieren nach"
+msgid "Tier"
+msgstr "Stufe"
 
 #: build/blocks/index.js:3
-msgid "ID"
-msgstr ""
+msgid "Description"
+msgstr "Beschreibung"
 
 #: build/blocks/index.js:3
-msgid "Title"
-msgstr "Titel"
+msgid "Content"
+msgstr "Inhalt"
 
 #: build/blocks/index.js:3
-msgid "Name"
-msgstr ""
+msgid "Tier List"
+msgstr "Stufen-Liste"
 
 #: build/blocks/index.js:3
-msgid "Date"
-msgstr "Datum"
+msgid "List of tiers."
+msgstr "Eine Liste an Stufen."
 
 #: build/blocks/index.js:3
-msgid "Modified"
-msgstr "Geändert"
+msgid "Title {0}"
+msgid_plural "Title {0}"
+msgstr[0] "Titel"
+msgstr[1] "Titel"
 
 #: build/blocks/index.js:3
-msgid "Menu order"
-msgstr "Menü Reihenfolge"
+msgid "Some text"
+msgstr "Text"
 
 #: build/blocks/index.js:3
-msgctxt "Label for selecting order of posts"
-msgid "Order"
-msgstr "Reihenfolge"
+msgid "Some more text"
+msgstr "Mehr text"
 
 #: build/blocks/index.js:3
-msgid "Descending"
-msgstr "Absteigend"
+msgid "Add Element"
+msgstr "Hinzufügen"
 
 #: build/blocks/index.js:3
-msgid "Ascending"
-msgstr "Aufsteigend"
-
-#: build/blocks/index.js:3
-msgctxt "download icon panel title"
-msgid "Icon"
-msgstr ""
-
-#: build/blocks/index.js:3
-msgid "Use Dashicon"
-msgstr "Dashicon verwenden"
-
-#: build/blocks/index.js:3
-msgid "Select icon"
-msgstr "Icon auswählen"
-
-#: build/blocks/index.js:3
-msgctxt "border panel title"
-msgid "Border"
-msgstr "Umrandung"
-
-#: build/blocks/index.js:3
-msgid "Border style"
-msgstr "Umrahmungsstil"
-
-#: build/blocks/index.js:3
-msgid "Hidden"
-msgstr "Versteckt"
-
-#: build/blocks/index.js:3
-msgid "Solid"
-msgstr "Solide"
-
-#: build/blocks/index.js:3
-msgid "Dashed"
-msgstr "Gestrichelt"
-
-#: build/blocks/index.js:3
-msgid "Dotted"
-msgstr "Gepunktet"
-
-#: build/blocks/index.js:3
-msgctxt "block title"
-msgid "Download"
-msgstr "Herunterladen"
-
-#: build/blocks/index.js:3
-msgid "Provides a nice download with an icon."
-msgstr "Erstellt einen Download-Link mit Icon."
-
-#: build/blocks/index.js:3
-msgid "Open in new tab"
-msgstr "In neuem Tab öffnen"
-
-#: build/blocks/index.js:3
-msgctxt "placeholder"
-msgid "Filename"
-msgstr "Dateiname"
+msgid "Clear"
+msgstr "Leeren"
