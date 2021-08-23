@@ -1,9 +1,9 @@
-import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { PanelBody, SelectControl } from '@wordpress/components';
-import { useSelect, withSelect } from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 import { _x, __ } from '@wordpress/i18n';
 import { blockBase, i18nDomain } from '../../config';
+import { Inspector } from './inspector';
 import { Selector } from './selector';
 
 registerBlockType(`${blockBase}/index`, {
@@ -35,13 +35,10 @@ registerBlockType(`${blockBase}/index`, {
             default: 'DESC',
         },
     },
-    edit: withSelect(select => ({
-        posttypes: select('core').getEntitiesByKind('postType'),
-    }))(({ attributes, setAttributes, posttypes }) => {
+    edit: ({ attributes, setAttributes }) => {
         const blockProps = useBlockProps();
         const { posttype, pageid, orderby, order } = attributes;
-        if (posttypes)
-            posttypes = posttypes.filter(p => p.name !== 'attachment' && p.name != 'wp_block');
+        const posttypes = useSelect(select => select('core').getEntitiesByKind('postType'), [])?.filter(p => p.name !== 'attachment' && p.name != 'wp_block');
         const pages = useSelect(select => select('core').getEntityRecords('postType', posttype), [posttype]);
 
         return (
@@ -51,37 +48,16 @@ registerBlockType(`${blockBase}/index`, {
                     posttypes={posttypes}
                     pages={pages}
                     pageid={pageid}
-                    onChangeType={t => setAttributes({ posttype: t})}
-                    onChangeId={i => setAttributes({ pageid: i })}
-                    />
-                <InspectorControls>
-                    <PanelBody title={__('Ordering', i18nDomain)}>
-                        <SelectControl
-                            label={_x('Order by', 'Label for selecting order of posts', i18nDomain)}
-                            value={orderby}
-                            options={[
-                                { label: __('ID', i18nDomain), value: 'ID' },
-                                { label: __('Title', i18nDomain), value: 'title' },
-                                { label: __('Name', i18nDomain), value: 'name' },
-                                { label: __('Date', i18nDomain), value: 'date' },
-                                { label: __('Modified', i18nDomain), value: 'modified' },
-                                { label: __('Menu order', i18nDomain), value: 'menu_order' },
-                            ]}
-                            onChange={o => setAttributes({ orderby: o })}
-                            />
-                        <SelectControl
-                            label={_x('Order', 'Label for selecting order of posts', i18nDomain)}
-                            value={order}
-                            options={[
-                                { label: __('Descending', i18nDomain), value: 'DESC' },
-                                { label: __('Ascending', i18nDomain), value: 'ASC' },
-                            ]}
-                            onChange={o => setAttributes({ order: o })}
-                            />
-                    </PanelBody>
-                </InspectorControls>
+                    onChangeType={t => setAttributes({ posttype: t, pageid: -1 })}
+                    onChangeId={i => setAttributes({ pageid: +i })}
+                />
+                <Inspector
+                    order={order}
+                    orderby={orderby}
+                    onChangeOrderBy={o => setAttributes({ orderby: o })}
+                    onChangeOrder={o => setAttributes({ order: o })}
+                />
             </div>
         )
-
-    }),
+    },
 });

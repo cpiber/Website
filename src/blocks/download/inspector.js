@@ -4,7 +4,7 @@ import { _x, __ } from "@wordpress/i18n";
 import * as icons from '@wordpress/icons';
 import { i18nDomain } from "../../config";
 
-const Inspector = ({ usedashicon, toggleUsedashicon, dashicon, onDashiconChange, iconid, iconurl, onIconChange, border, onBorderChange }) => {
+export const Inspector = ({ usedashicon, toggleUsedashicon, dashicon, onDashiconChange, iconid, iconurl, onIconChange, border, onBorderChange }) => {
     const dashicons = Object.keys(icons).slice(1); // remove Icon
 
     return (
@@ -57,4 +57,3 @@ const Inspector = ({ usedashicon, toggleUsedashicon, dashicon, onDashiconChange,
         </InspectorControls>
     );
 }
-export default Inspector;

@@ -10,6 +10,7 @@ class BlockIndex extends Block {
     function renderBlock($props, $content) {
         if (!\array_key_exists('posttype', $props) || !\array_key_exists('pageid', $props))
             return;
+        if ($props['pageid'] < 0) $props['pageid'] = 0;
         $posts = \get_posts(array(
             'numberposts'   => -1,
             'post_type'     => $props['posttype'],

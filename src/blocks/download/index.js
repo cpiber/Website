@@ -4,7 +4,7 @@ import { Flex, FlexBlock, FlexItem, Icon, ToolbarButton, ToolbarGroup } from '@w
 import { _x, __ } from '@wordpress/i18n';
 import * as icons from '@wordpress/icons';
 import { blockBase, i18nDomain } from '../../config';
-import Inspector from './inspector';
+import { Inspector } from './inspector';
 import styles from './style.module.scss';
 const { block } = styles;
 
