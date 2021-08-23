@@ -23,6 +23,12 @@ registerBlockType(`${blockBase}/accordion`, {
     category: 'widgets',
     icon: 'table-row-after',
     attributes: {
+        id: {
+            type: 'string',
+            source: 'attribute',
+            selector: 'input',
+            attribute: 'id',
+        },
         title: {
             type: 'string',
             source: 'html',
@@ -87,7 +93,7 @@ registerBlockType(`${blockBase}/accordion`, {
     save: ({ attributes }) => {
         const blockProps = useBlockProps.save();
         const { title, name, type, checked, color } = attributes;
-        const id = uniqueString();
+        const id = attributes.id || uniqueString();
  
         return (
             <div { ...blockProps }>

@@ -73,7 +73,7 @@ registerBlockType(`${blockBase}/tier-list`, {
                     }
                 />
                 { (isSelected || (!isSelected && list.length === 0)) && (
-                    <div class={controls}>
+                    <div className={controls}>
                         <Button isPrimary onClick={() => setAttributes({ list: [...list, {}] })}>{__('Add Element', 'theme-piber')}</Button>
                         {list.length !== 0 && <Button isLink isDestructive isSmall onClick={() => setAttributes({ list: [] })}>{__('Clear', 'theme-piber')}</Button>}
                     </div>

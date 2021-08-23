@@ -19,12 +19,12 @@ export const Inspector = ({ name, onChangeName, type, onChangeType, checked, onC
                     />
                     {type === 'radio' && (<TextControl
                         label={_x('Name', 'Accordion name label.', 'theme-piber')}
-                        value={name}
+                        value={name || ''}
                         onChange={onChangeName}
                     />)}
                     <ToggleControl
                         label={_x('Default Open', 'Accordion default open label.', 'theme-piber')}
-                        checked={checked}
+                        checked={checked || false}
                         onChange={onChangeChecked}
                     />
                 </PanelBody>
