@@ -4,9 +4,10 @@ import { Button } from '@wordpress/components';
 import { _n, __ } from '@wordpress/i18n';
 import { arrayMove, arrayRemove, List } from 'react-movable';
 import { blockBase, i18nDomain } from '../../config';
-import { block, controls, item } from './editor.module.scss';
+import styles from './editor.module.scss';
 import { Tier } from './tier';
 import transforms from "./transforms";
+const { block, controls, item } = styles;
 
 registerBlockType(`${blockBase}/tier-list`, {
     apiVersion: 2,

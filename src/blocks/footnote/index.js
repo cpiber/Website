@@ -3,9 +3,11 @@ import { registerBlockType } from '@wordpress/blocks';
 import { Flex, FlexBlock, FlexItem } from '@wordpress/components';
 import { _x, __ } from '@wordpress/i18n';
 import { blockBase, i18nDomain } from '../../config';
-import { pre, content as eContent } from './editor.module.scss';
-import { asterisk, block, content } from './style.module.scss';
+import eStyles from './editor.module.scss';
+import styles from './style.module.scss';
 import transforms from './transforms';
+const { pre, content: eContent } = eStyles;
+const { asterisk, block, content } = styles;
 
 registerBlockType(`${blockBase}/footnote`, {
     apiVersion: 2,

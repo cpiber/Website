@@ -1,4 +1,5 @@
-import { excerpt } from './excerpt.module.scss';
+import styles from './excerpt.module.scss';
+const { excerpt } = styles;
 
 export const Excerpt = ({ className, children }) => 
     <div className={`${excerpt} ${className || ''}`}>{children}</div>;

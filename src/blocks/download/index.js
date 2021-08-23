@@ -1,11 +1,12 @@
 import { BlockControls, MediaPlaceholder, MediaReplaceFlow, RichText, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { Flex, FlexBlock, FlexItem, Icon, ToolbarGroup, ToolbarButton } from '@wordpress/components';
+import { Flex, FlexBlock, FlexItem, Icon, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { _x, __ } from '@wordpress/i18n';
 import * as icons from '@wordpress/icons';
 import { blockBase, i18nDomain } from '../../config';
 import Inspector from './inspector';
-import { block } from './style.module.scss';
+import styles from './style.module.scss';
+const { block } = styles;
 
 registerBlockType(`${blockBase}/download`, {
     apiVersion: 2,
