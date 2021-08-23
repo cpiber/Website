@@ -21,7 +21,8 @@
     "packages-update": "wp-scripts packages-update",
     "prepack": "npm run build",
     "pack": "npm-pack-zip",
-    "clean": "rimraf build"
+    "clean": "rimraf build",
+    "i18n": "wp i18n make-pot . languages/theme-piber.pot --exclude=src && wp i18n make-json languages/ --no-purge"
   },
   "author": "",
   "license": "ISC",
