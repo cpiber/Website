@@ -2,7 +2,6 @@
 
 namespace piber\template;
 
-\define('piber\THEME_PIBER_DOMAIN', 'theme-piber');
 \define('piber\THEME_PIBER_L_PATH', __DIR__ . '/languages');
 
 require "register_blocks.php";
@@ -32,7 +31,7 @@ function block_init() {
         $script_asset['version'],
         true
     );
-    \wp_set_script_translations("$script_base-block-editor", \piber\THEME_PIBER_DOMAIN, \piber\THEME_PIBER_L_PATH);
+    \wp_set_script_translations("$script_base-block-editor", 'theme-piber', \piber\THEME_PIBER_L_PATH);
 
     $editor_css = '/build/blocks/index.css';
     \wp_register_style(
@@ -98,7 +97,7 @@ function enqueue_scripts_styles() {
         $script_asset['version'],
         true
     );
-    \wp_set_script_translations("$script_base-frontend", \piber\THEME_PIBER_DOMAIN, \piber\THEME_PIBER_L_PATH);
+    \wp_set_script_translations("$script_base-frontend", 'theme-piber', \piber\THEME_PIBER_L_PATH);
 
     $css = '/build/frontend/index.css';
     if (file_exists($dir . $css)) {
@@ -138,7 +137,7 @@ function body_class($classes) {
 \add_filter('body_class', __NAMESPACE__ . '\body_class');
 
 function theme_setup() {
-    load_child_theme_textdomain(\piber\THEME_PIBER_DOMAIN, get_stylesheet_directory() . '/languages');
+    load_child_theme_textdomain('theme-piber', get_stylesheet_directory() . '/languages');
 }
 \add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup');
 

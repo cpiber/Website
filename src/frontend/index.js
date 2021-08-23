@@ -1,4 +1,3 @@
-import { i18nDomain } from "../config";
 import './style.scss';
 
 /**
@@ -7,5 +6,3 @@ import './style.scss';
 jQuery($ => {
     $(document.body).toggleClass('no-js js');
 });
-
-console.log(i18nDomain);
