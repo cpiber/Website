@@ -1,6 +1,8 @@
 
 import '../common';
-import './tier-list';
+import './accordion';
+import './download';
 import './footnote';
 import './pageindex';
-import './download';
+import './tier-list';
+

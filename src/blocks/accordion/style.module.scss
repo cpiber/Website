@@ -1,0 +1,46 @@
+.heading {
+    cursor: pointer;
+
+    &::before {
+        content: '+';
+        display: inline-block;
+        margin-right: 10px;
+        width: 1em;
+        text-align: center;
+        transition: content 0.1s ease-in-out;
+    }
+}
+
+.input {
+    // hide the input field
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.content {
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    :global(.no-js) & {
+        transition: padding-bottom 0.1s ease-in-out;
+    }
+    :global(.js) & {
+        transition: height 0.1s ease-in-out;
+    }
+}
+
+.input:checked ~ label .heading::before {
+    content: '-';
+}
+
+.input:checked ~ .content {
+    height: auto;
+
+    :global(.no-js) & {
+        padding-bottom: 50px;
+        margin-bottom: -50px;
+    }
+}

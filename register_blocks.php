@@ -13,6 +13,7 @@ function register_blocks($script_base) {
         'index'     => new BlockIndex(),
         'footnote'  => null,
         'download'  => null,
+        'accordion' => null,
     );
 
     foreach ($blocks as $block => $render_callback) {

@@ -132,6 +132,11 @@ function enqueue_scripts_styles() {
 }
 \add_action('wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_scripts_styles');
 
+function body_class($classes) {
+    return array_merge($classes, array('no-js'));
+}
+\add_filter('body_class', __NAMESPACE__ . '\body_class');
+
 function theme_setup() {
     $langdir = get_stylesheet_directory() . '/languages';
     \load_child_theme_textdomain(\piber\THEME_PIBER_DOMAIN, $langdir);
