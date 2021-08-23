@@ -2,7 +2,6 @@
 
 namespace piber\website;
 
-\define('piber\THEME_PIBER_DOMAIN', 'theme-piber');
 \define('piber\THEME_PIBER_L_PATH', __DIR__ . '/languages');
 
 require "register_blocks.php";
@@ -20,7 +19,7 @@ function block_init() {
     $script_asset_path = "$dir/build/blocks/index.asset.php";
     if (!file_exists($script_asset_path)) {
         throw new \Error(
-            __('You need to run `npm start` or `npm run build` first.', \piber\THEME_PIBER_DOMAIN)
+            __('You need to run `npm start` or `npm run build` first.', 'theme-piber')
         );
     }
     $index_js     = '/build/blocks/index.js';
@@ -32,7 +31,7 @@ function block_init() {
         $script_asset['version'],
         true
     );
-    \wp_set_script_translations("$script_base-block-editor", \piber\THEME_PIBER_DOMAIN, \piber\THEME_PIBER_L_PATH);
+    \wp_set_script_translations("$script_base-block-editor", 'theme-piber', \piber\THEME_PIBER_L_PATH);
 
     $editor_css = '/build/blocks/index.css';
     \wp_register_style(
@@ -86,7 +85,7 @@ function enqueue_scripts_styles() {
     $script_asset_path = "$dir/build/frontend/index.asset.php";
     if (!file_exists($script_asset_path)) {
         throw new \Error(
-            __('You need to run `npm start` or `npm run build` first.', \piber\THEME_PIBER_DOMAIN)
+            __('You need to run `npm start` or `npm run build` first.', 'theme-piber')
         );
     }
     $index_js     = '/build/frontend/index.js';
@@ -98,7 +97,7 @@ function enqueue_scripts_styles() {
         $script_asset['version'],
         true
     );
-    \wp_set_script_translations("$script_base-frontend", \piber\THEME_PIBER_DOMAIN, \piber\THEME_PIBER_L_PATH);
+    \wp_set_script_translations("$script_base-frontend", 'theme-piber', \piber\THEME_PIBER_L_PATH);
 
     $css = '/build/frontend/index.css';
     if (file_exists($dir . $css)) {
@@ -139,7 +138,7 @@ function body_class($classes) {
 
 function theme_setup() {
     $langdir = get_stylesheet_directory() . '/languages';
-    \load_child_theme_textdomain(\piber\THEME_PIBER_DOMAIN, $langdir);
+    \load_child_theme_textdomain('theme-piber', $langdir);
     \load_theme_textdomain('mik', $langdir); // provide parent translations
 }
 \add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup');
@@ -176,7 +175,7 @@ function footer() {
 
 function after_switch_theme() {
     /* translators: Demo user role name */
-    \add_role('demo', __('Demo', \piber\THEME_PIBER_DOMAIN), get_role('administrator')->capabilities);
+    \add_role('demo', __('Demo', 'theme-piber'), get_role('administrator')->capabilities);
     \wp_insert_user(array(
         'user_login'    => 'demo',
         'user_pass'     => 'demo',
@@ -197,7 +196,7 @@ function query($query) {
 function login_errors(\WP_Error $errors) {
     $errors->add('demo',
         /* translators: Message on login screen with username and password for demo user */
-        sprintf(__('For a demo user, login with username %1$s and password %1$s', \piber\THEME_PIBER_DOMAIN), '<code>demo</code>'),
+        sprintf(__('For a demo user, login with username %1$s and password %1$s', 'theme-piber'), '<code>demo</code>'),
         'message');
     return $errors;
 }

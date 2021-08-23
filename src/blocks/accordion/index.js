@@ -2,7 +2,7 @@ import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { _x, __ } from '@wordpress/i18n';
 import uniqueString from 'unique-string';
-import { blockBase, i18nDomain } from '../../config';
+import { blockBase } from '../../config';
 import eStyles from './editor.module.scss';
 import { Inspector } from './inspector';
 import styles from './style.module.scss';
@@ -14,11 +14,11 @@ registerBlockType(`${blockBase}/accordion`, {
     title: _x(
         'Accordion',
         'block title',
-        i18nDomain
+        'theme-piber'
     ),
     description: __(
         'Expandable accordion.',
-        i18nDomain
+        'theme-piber'
     ),
     category: 'widgets',
     icon: 'table-row-after',
@@ -61,7 +61,7 @@ registerBlockType(`${blockBase}/accordion`, {
         return (
             <div {...blockProps}>
                 <RichText
-                    placeholder={__('Title', i18nDomain)}
+                    placeholder={__('Title', 'theme-piber')}
                     value={title}
                     onChange={t => setAttributes({ title: t })}
                     tagName='h2'

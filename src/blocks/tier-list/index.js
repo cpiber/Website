@@ -3,7 +3,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { Button } from '@wordpress/components';
 import { _n, __ } from '@wordpress/i18n';
 import { arrayMove, arrayRemove, List } from 'react-movable';
-import { blockBase, i18nDomain } from '../../config';
+import { blockBase } from '../../config';
 import styles from './editor.module.scss';
 import { Tier } from './tier';
 import transforms from "./transforms";
@@ -13,11 +13,11 @@ registerBlockType(`${blockBase}/tier-list`, {
     apiVersion: 2,
     title: __(
         'Tier List',
-        i18nDomain
+        'theme-piber'
     ),
     description: __(
         'List of tiers.',
-        i18nDomain
+        'theme-piber'
     ),
     category: 'widgets',
     icon: 'editor-ol',
@@ -25,12 +25,12 @@ registerBlockType(`${blockBase}/tier-list`, {
         attributes: {
             list: [
                 {
-                    title: _n('Title {0}', 'Title {0}', 1, i18nDomain).format(1),
-                    text: __('Some text', i18nDomain)
+                    title: _n('Title {0}', 'Title {0}', 1, 'theme-piber').format(1),
+                    text: __('Some text', 'theme-piber')
                 },
                 {
-                    title: _n('Title {0}', 'Title {0}', 2, i18nDomain).format(2),
-                    text: __('Some more text', i18nDomain)
+                    title: _n('Title {0}', 'Title {0}', 2, 'theme-piber').format(2),
+                    text: __('Some more text', 'theme-piber')
                 },
             ],
         },
@@ -48,7 +48,7 @@ registerBlockType(`${blockBase}/tier-list`, {
         blockProps.className += ` ${block}`;
         return (
             <div {...blockProps}>
-                {/* <h2>{__('Tier List', i18nDomain)}</h2> */}
+                {/* <h2>{__('Tier List', 'theme-piber')}</h2> */}
                 <List
                     values={list}
                     removableByMove
@@ -74,8 +74,8 @@ registerBlockType(`${blockBase}/tier-list`, {
                 />
                 { (isSelected || (!isSelected && list.length === 0)) && (
                     <div class={controls}>
-                        <Button isPrimary onClick={() => setAttributes({ list: [...list, {}] })}>{__('Add Element', i18nDomain)}</Button>
-                        {list.length !== 0 && <Button isLink isDestructive isSmall onClick={() => setAttributes({ list: [] })}>{__('Clear', i18nDomain)}</Button>}
+                        <Button isPrimary onClick={() => setAttributes({ list: [...list, {}] })}>{__('Add Element', 'theme-piber')}</Button>
+                        {list.length !== 0 && <Button isLink isDestructive isSmall onClick={() => setAttributes({ list: [] })}>{__('Clear', 'theme-piber')}</Button>}
                     </div>
                 )}
             </div>

@@ -2,7 +2,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
 import { _x, __ } from '@wordpress/i18n';
-import { blockBase, i18nDomain } from '../../config';
+import { blockBase } from '../../config';
 import { Inspector } from './inspector';
 import { Selector } from './selector';
 
@@ -11,11 +11,11 @@ registerBlockType(`${blockBase}/index`, {
     title: _x(
         'Index',
         'block title',
-        i18nDomain
+        'theme-piber'
     ),
     description: __(
         'Displays all children of selected page as an index.',
-        i18nDomain
+        'theme-piber'
     ),
     category: 'widgets',
     icon: 'admin-page',

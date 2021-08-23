@@ -2,7 +2,7 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { Flex, FlexBlock, FlexItem } from '@wordpress/components';
 import { _x, __ } from '@wordpress/i18n';
-import { blockBase, i18nDomain } from '../../config';
+import { blockBase } from '../../config';
 import eStyles from './editor.module.scss';
 import styles from './style.module.scss';
 import transforms from './transforms';
@@ -14,11 +14,11 @@ registerBlockType(`${blockBase}/footnote`, {
     title: _x(
         'Footnote',
         'block title',
-        i18nDomain
+        'theme-piber'
     ),
     description: __(
         'Puts an asterisk and small text.',
-        i18nDomain
+        'theme-piber'
     ),
     category: 'widgets',
     icon: 'warning',
@@ -28,7 +28,7 @@ registerBlockType(`${blockBase}/footnote`, {
     example: {
         attributes: {
             /* translators: Footnote block example */
-            text: `<p>${__('Some Footnote text', i18nDomain)}</p>`,
+            text: `<p>${__('Some Footnote text', 'theme-piber')}</p>`,
         },
     },
     transforms,
@@ -51,7 +51,7 @@ registerBlockType(`${blockBase}/footnote`, {
                         value={text}
                         tagName='p'
                         onChange={val => setAttributes({ text: val })}
-                        placeholder={_x('Footnote', 'placeholder', i18nDomain)}
+                        placeholder={_x('Footnote', 'placeholder', 'theme-piber')}
                     ></RichText>
                 </FlexBlock>
             </Flex>

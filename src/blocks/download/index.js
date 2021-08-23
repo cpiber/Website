@@ -3,7 +3,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { Flex, FlexBlock, FlexItem, Icon, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { _x, __ } from '@wordpress/i18n';
 import * as icons from '@wordpress/icons';
-import { blockBase, i18nDomain } from '../../config';
+import { blockBase } from '../../config';
 import { Inspector } from './inspector';
 import styles from './style.module.scss';
 const { block } = styles;
@@ -13,11 +13,11 @@ registerBlockType(`${blockBase}/download`, {
     title: _x(
         'Download',
         'block title',
-        i18nDomain
+        'theme-piber'
     ),
     description: __(
         'Provides a nice download with an icon.',
-        i18nDomain
+        'theme-piber'
     ),
     category: 'widgets',
     icon: 'download',
@@ -95,7 +95,7 @@ registerBlockType(`${blockBase}/download`, {
                     <BlockControls>
                         <ToolbarGroup>
                             <ToolbarButton
-                                label={__('Open in new tab', i18nDomain)}
+                                label={__('Open in new tab', 'theme-piber')}
                                 icon='external'
                                 isActive={newtab}
                                 onClick={() => setAttributes({ newtab: !newtab })}
@@ -120,7 +120,7 @@ registerBlockType(`${blockBase}/download`, {
                             <RichText
                                 tagName="div"
                                 value={filename}
-                                placeholder={_x('Filename', 'placeholder', i18nDomain)}
+                                placeholder={_x('Filename', 'placeholder', 'theme-piber')}
                                 withoutInteractiveFormatting
                                 onChange={text => setAttributes({ filename: text })}
                             />

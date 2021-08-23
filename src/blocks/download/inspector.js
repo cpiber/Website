@@ -2,22 +2,21 @@ import { InspectorControls, MediaPlaceholder, MediaReplaceFlow } from "@wordpres
 import { PanelBody, RadioControl, SelectControl, ToggleControl } from "@wordpress/components";
 import { _x, __ } from "@wordpress/i18n";
 import * as icons from '@wordpress/icons';
-import { i18nDomain } from "../../config";
 
 export const Inspector = ({ usedashicon, toggleUsedashicon, dashicon, onDashiconChange, iconid, iconurl, onIconChange, border, onBorderChange }) => {
     const dashicons = Object.keys(icons).slice(1); // remove Icon
 
     return (
         <InspectorControls>
-            <PanelBody title={_x('Icon', 'download icon panel title', i18nDomain)}>
+            <PanelBody title={_x('Icon', 'download icon panel title', 'theme-piber')}>
                 <ToggleControl
-                    label={__('Use Dashicon', i18nDomain)}
+                    label={__('Use Dashicon', 'theme-piber')}
                     checked={usedashicon}
                     onChange={toggleUsedashicon}
                 />
                 {usedashicon && (
                     <SelectControl
-                        label={__('Select icon', i18nDomain)}
+                        label={__('Select icon', 'theme-piber')}
                         value={dashicon}
                         options={dashicons.map(i => ({ label: i }))}
                         onChange={onDashiconChange}
@@ -41,15 +40,15 @@ export const Inspector = ({ usedashicon, toggleUsedashicon, dashicon, onDashicon
                     />
                 )}
             </PanelBody>
-            <PanelBody title={_x('Border', 'border panel title', i18nDomain)}>
+            <PanelBody title={_x('Border', 'border panel title', 'theme-piber')}>
                 <RadioControl
-                    label={__('Border style', i18nDomain)}
+                    label={__('Border style', 'theme-piber')}
                     selected={border || 'hidden'}
                     options={[
-                        { value: 'hidden', label: __('Hidden', i18nDomain) },
-                        { value: 'solid', label: __('Solid', i18nDomain) },
-                        { value: 'dashed', label: __('Dashed', i18nDomain) },
-                        { value: 'dotted', label: __('Dotted', i18nDomain) },
+                        { value: 'hidden', label: __('Hidden', 'theme-piber') },
+                        { value: 'solid', label: __('Solid', 'theme-piber') },
+                        { value: 'dashed', label: __('Dashed', 'theme-piber') },
+                        { value: 'dotted', label: __('Dotted', 'theme-piber') },
                     ]}
                     onChange={onBorderChange}
                 />

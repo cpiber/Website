@@ -1,31 +1,30 @@
 import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { _x, __ } from '@wordpress/i18n';
-import { i18nDomain } from '../../config';
 
 export const Inspector = ({ orderby, order, onChangeOrderBy, onChangeOrder }) => {
     return (
         <InspectorControls>
-            <PanelBody title={__('Ordering', i18nDomain)}>
+            <PanelBody title={__('Ordering', 'theme-piber')}>
                 <SelectControl
-                    label={_x('Order by', 'Label for selecting order of posts', i18nDomain)}
+                    label={_x('Order by', 'Label for selecting order of posts', 'theme-piber')}
                     value={orderby}
                     options={[
-                        { label: __('ID', i18nDomain), value: 'ID' },
-                        { label: __('Title', i18nDomain), value: 'title' },
-                        { label: __('Name', i18nDomain), value: 'name' },
-                        { label: __('Date', i18nDomain), value: 'date' },
-                        { label: __('Modified', i18nDomain), value: 'modified' },
-                        { label: __('Menu order', i18nDomain), value: 'menu_order' },
+                        { label: __('ID', 'theme-piber'), value: 'ID' },
+                        { label: __('Title', 'theme-piber'), value: 'title' },
+                        { label: __('Name', 'theme-piber'), value: 'name' },
+                        { label: __('Date', 'theme-piber'), value: 'date' },
+                        { label: __('Modified', 'theme-piber'), value: 'modified' },
+                        { label: __('Menu order', 'theme-piber'), value: 'menu_order' },
                     ]}
                     onChange={onChangeOrderBy}
                 />
                 <SelectControl
-                    label={_x('Order', 'Label for selecting order of posts', i18nDomain)}
+                    label={_x('Order', 'Label for selecting order of posts', 'theme-piber')}
                     value={order}
                     options={[
-                        { label: __('Descending', i18nDomain), value: 'DESC' },
-                        { label: __('Ascending', i18nDomain), value: 'ASC' },
+                        { label: __('Descending', 'theme-piber'), value: 'DESC' },
+                        { label: __('Ascending', 'theme-piber'), value: 'ASC' },
                     ]}
                     onChange={onChangeOrder}
                 />

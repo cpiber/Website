@@ -1,7 +1,6 @@
 import { RichText } from "@wordpress/block-editor";
 import { Flex, FlexBlock, FlexItem, TextControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import { i18nDomain } from "../../config";
 import { ConditionalExcerpt } from "../excerpt";
 import { HandleIcon, RemovableIcon } from "../icons";
 
@@ -26,7 +25,7 @@ export const Tier = (props) => {
         <FlexBlock>
             <ConditionalExcerpt showExcerpt={!isSelected} value={value.title || ""}>
                 <TextControl
-                    label={__('Tier', i18nDomain)}
+                    label={__('Tier', 'theme-piber')}
                     value={value.title || ""}
                     onChange={updateProp.bind(null, 'title')}
                 />
@@ -35,11 +34,11 @@ export const Tier = (props) => {
         <FlexBlock>
             <ConditionalExcerpt showExcerpt={!isSelected} value={value.text || ""}>
                 <RichText
-                    label={__('Description', i18nDomain)}
+                    label={__('Description', 'theme-piber')}
                     value={value.text || ""}
                     onChange={updateProp.bind(null, 'text')}
                     role='button'
-                    placeholder={isSelected && __('Content', i18nDomain)}
+                    placeholder={isSelected && __('Content', 'theme-piber')}
                 />
             </ConditionalExcerpt>
         </FlexBlock>
