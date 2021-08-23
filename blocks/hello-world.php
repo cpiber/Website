@@ -4,7 +4,7 @@ namespace piber\template\blocks;
 
 class BlockHelloWorld extends Block {
     public function __construct() {
-        self::loadModule("hello-world");
+        $this->loadModule("hello-world");
     }
 
     function renderBlock($props, $content) {

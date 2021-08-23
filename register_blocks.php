@@ -34,9 +34,8 @@ abstract class Block {
     protected ?\piber\template\CSSModule $module = null;
 
     function loadModule(string $name) {
-        if (\array_key_exists($name, self::$modules))
-            return;
-        self::$modules[$name] = new \piber\template\CSSModule(__DIR__ . "/build/css/blocks/$name.module.scss.json");
+        if (!\array_key_exists($name, self::$modules))
+            self::$modules[$name] = new \piber\template\CSSModule(__DIR__ . "/build/css/blocks/$name.module.scss.php");
         $this->module = &self::$modules[$name];
     }
 
