@@ -207,12 +207,13 @@ function login_errors(\WP_Error $errors) {
 class CSSModule {
     private $collection = array();
 
-    public function __construct(string $json_file) {
-        if (!isset($json_file) || !file_exists($json_file)) {
+    public function __construct(string $css_file) {
+        if (!isset($css_file) || !file_exists($css_file)) {
             return false;
         }
-        // push the JSON data into this instance
-        $this->collection = json_decode(file_get_contents($json_file), true);
+        // push the module data into this instance
+        $a = include $css_file;
+        if (\is_array($this->collection)) $this->collection = $a;
     }
 
     public function get_class_name(string $class_name): string {

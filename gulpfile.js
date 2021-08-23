@@ -28,9 +28,9 @@ function tasksass(modules = false, minify = false) {
         if (modules) {
             postcssplugins.push(postcssModules({
                 getJSON: function (cssFileName, json, outputFileName) {
-                    const jsonFileName = `${outputFileName.replace(base, output)}.json`;
-                    fs.mkdirSync(path.dirname(jsonFileName), { recursive: true });
-                    fs.writeFileSync(jsonFileName, JSON.stringify(json));
+                    const outFileName = `${outputFileName.replace(base, output)}.php`;
+                    fs.mkdirSync(path.dirname(outFileName), { recursive: true });
+                    fs.writeFileSync(outFileName, `<?php return ${toPHPArray(json)};`);
                 }
             }));
         }
@@ -45,6 +45,18 @@ function tasksass(modules = false, minify = false) {
             .pipe(gulpif(!minify, sourcemaps.write('.')))
             .pipe(dest('./build/css'));
     }
+}
+
+function toPHPArray(obj) {
+    if (isPrimitive(obj))
+        return JSON.stringify(obj);
+    const strs = Array.isArray(obj) ? obj.map(i => toPHPArray(i)) : Object.keys(obj).map(k => `${JSON.stringify(k)} => ${toPHPArray(obj[k])}`);
+    return `array(${strs.join(', ')})`;
+}
+
+function isPrimitive(val) {
+    return (['string', 'number', 'bigint', 'boolean', 'undefined', 'null']).indexOf(typeof val) !== -1 ||
+        val instanceof String || val instanceof Number || val instanceof BigInt || val instanceof Boolean;
 }
 
 
