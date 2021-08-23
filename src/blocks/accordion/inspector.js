@@ -1,10 +1,10 @@
 import { InspectorAdvancedControls, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, RadioControl, TextControl, ToggleControl } from '@wordpress/components';
+import { ColorPicker, PanelBody, RadioControl, TextControl, ToggleControl } from '@wordpress/components';
 import { _x, __ } from '@wordpress/i18n';
 import { Fragment } from 'react';
 import { i18nDomain } from '../../config';
 
-export const Inspector = ({ name, onChangeName, type, onChangeType, checked, onChangeChecked, hide, onChangeHide }) => {
+export const Inspector = ({ name, onChangeName, type, onChangeType, checked, onChangeChecked, color, onChangeColor, hide, onChangeHide }) => {
     return (
         <Fragment>
             <InspectorControls>
@@ -35,6 +35,12 @@ export const Inspector = ({ name, onChangeName, type, onChangeType, checked, onC
                     label={__('Hide content when not selected', i18nDomain)}
                     checked={hide}
                     onChange={onChangeHide}
+                />
+                <ColorPicker
+                    label={__('Title background and content border', i18nDomain)}
+                    color={color}
+                    onChangeComplete={onChangeColor}
+                    disableAlpha
                 />
             </InspectorAdvancedControls>
         </Fragment>

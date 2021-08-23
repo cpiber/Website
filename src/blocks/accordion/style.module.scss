@@ -1,5 +1,8 @@
 .heading {
     cursor: pointer;
+    padding: 3px 8px;
+    transition: margin-top 0.1s ease-in-out;
+    margin-bottom: 0;
 
     &::before {
         content: '+';
@@ -21,8 +24,11 @@
 .content {
     height: 0;
     overflow: hidden;
-    margin: 0;
-    padding: 0;
+    margin: 0 8px;
+    margin-top: -1px;
+    padding: 0 12px;
+    border: 1px dashed;
+    border-top-style: hidden;
 
     :global(.no-js) & {
         transition: padding-bottom 0.1s ease-in-out;
@@ -43,4 +49,12 @@
         padding-bottom: 50px;
         margin-bottom: -50px;
     }
+}
+
+:global(.wp-block-theme-piber-accordion.closed) + :global(.wp-block-theme-piber-accordion) .heading {
+    margin-top: 2px;
+}
+
+:global(.wp-block-theme-piber-accordion.last-in-group) {
+    margin-bottom: 2em;
 }

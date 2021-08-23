@@ -46,13 +46,17 @@ registerBlockType(`${blockBase}/accordion`, {
             selector: 'input',
             attribute: 'checked',
         },
+        color: {
+            type: 'string',
+            default: '#cecece',
+        },  
         hide: {
             type: 'boolean',
         },
     },
     edit: ({ attributes, setAttributes, isSelected }) => {
         const blockProps = useBlockProps();
-        const { title, name, type, checked, hide } = attributes;
+        const { title, name, type, checked, color, hide } = attributes;
 
         return (
             <div {...blockProps}>
@@ -69,10 +73,12 @@ registerBlockType(`${blockBase}/accordion`, {
                     name={name}
                     type={type}
                     checked={checked}
+                    color={color}
                     hide={hide}
                     onChangeName={n => setAttributes({ name: n })}
                     onChangeType={t => setAttributes({ type: t })}
                     onChangeChecked={c => setAttributes({ checked: !!c })}
+                    onChangeColor={c => setAttributes({ color: c })}
                     onChangeHide={h => setAttributes({ hide: !!h })}
                 />
             </div>
@@ -80,7 +86,7 @@ registerBlockType(`${blockBase}/accordion`, {
     },
     save: ({ attributes }) => {
         const blockProps = useBlockProps.save();
-        const { title, name, type, checked } = attributes;
+        const { title, name, type, checked, color } = attributes;
         const id = uniqueString();
  
         return (
@@ -96,10 +102,11 @@ registerBlockType(`${blockBase}/accordion`, {
                     <RichText.Content
                         value={title}
                         tagName='h2'
-                        className={heading}
+                        className={`${heading} block-accordion--heading`}
+                        style={{ backgroundColor: color }}
                     />
                 </label>
-                <div className={content} data-accordion-name={name}>
+                <div className={`${content} block-accordion--content`} data-accordion-name={name} style={{ borderColor: color }}>
                     <InnerBlocks.Content />
                 </div>
             </div>
