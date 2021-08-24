@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Website Piber 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Website\n"
-"POT-Creation-Date: 2021-08-23T21:19:57+02:00\n"
-"PO-Revision-Date: 2021-08-23 21:23+0200\n"
+"POT-Creation-Date: 2021-08-24T18:16:56+02:00\n"
+"PO-Revision-Date: 2021-08-24 18:17+0200\n"
 "Last-Translator: Constantin Piber <cp.piber@gmail.com>\n"
 "Language-Team: \n"
 "Language: de_DE@formal\n"
@@ -43,248 +43,260 @@ msgstr ""
 "Für eine Demo können Sie sich mit dem Demo-User einloggen. Benutzername: "
 "%1$s, Password: %1$s"
 
-#: build/blocks/index.js:1
-msgid "Input"
-msgstr ""
-
-#: build/blocks/index.js:1
-msgctxt "Accordion type label."
-msgid "Type"
-msgstr "Beitragstyp"
-
-#: build/blocks/index.js:1
-msgctxt "Accordion name label."
-msgid "Name"
-msgstr ""
-
-#: build/blocks/index.js:1
-msgctxt "Accordion default open label."
-msgid "Default Open"
-msgstr "Standardmäßig öffnen"
-
-#: build/blocks/index.js:1
-msgid "Hide content when not selected"
-msgstr "Inhalt verstecken wenn nicht angewählt"
-
-#: build/blocks/index.js:1
-msgid "Title background and content border"
-msgstr "Titel Hintergrund und Inhalt Rand"
-
-#: build/blocks/index.js:1
+#: build/blocks/index.js:39700
 msgctxt "block title"
 msgid "Accordion"
 msgstr ""
 
-#: build/blocks/index.js:1
+#: build/blocks/index.js:39701
 msgid "Expandable accordion."
 msgstr "Ausklappbares Accordion."
 
-#: build/blocks/index.js:1 build/blocks/index.js:3
+#: build/blocks/index.js:39759 build/blocks/index.js:40519
+#: build/blocks/index.js:40804
 msgid "Title"
 msgstr "Titel"
 
-#: build/blocks/index.js:1
-msgctxt "download icon panel title"
-msgid "Icon"
+#: build/blocks/index.js:39874
+msgid "Input"
 msgstr ""
 
-#: build/blocks/index.js:1
-msgid "Use Dashicon"
-msgstr "Dashicon verwenden"
+#: build/blocks/index.js:39876
+msgctxt "Accordion type label."
+msgid "Type"
+msgstr "Beitragstyp"
 
-#: build/blocks/index.js:1
-msgid "Select icon"
-msgstr "Icon auswählen"
+#: build/blocks/index.js:39887
+msgctxt "Accordion name label."
+msgid "Name"
+msgstr ""
 
-#: build/blocks/index.js:1
-msgctxt "border panel title"
-msgid "Border"
-msgstr "Umrandung"
+#: build/blocks/index.js:39891
+msgctxt "Accordion default open label."
+msgid "Default Open"
+msgstr "Standardmäßig öffnen"
 
-#: build/blocks/index.js:1
-msgid "Border style"
-msgstr "Umrahmungsstil"
+#: build/blocks/index.js:39895
+msgid "Hide content when not selected"
+msgstr "Inhalt verstecken wenn nicht angewählt"
 
-#: build/blocks/index.js:1
-msgid "Hidden"
-msgstr "Versteckt"
+#: build/blocks/index.js:39899
+msgid "Title background and content border"
+msgstr "Titel Hintergrund und Inhalt Rand"
 
-#: build/blocks/index.js:1
-msgid "Solid"
-msgstr "Solide"
-
-#: build/blocks/index.js:1
-msgid "Dashed"
-msgstr "Gestrichelt"
-
-#: build/blocks/index.js:1
-msgid "Dotted"
-msgstr "Gepunktet"
-
-#: build/blocks/index.js:1
+#: build/blocks/index.js:39945
 msgctxt "block title"
 msgid "Download"
 msgstr "Herunterladen"
 
-#: build/blocks/index.js:1
+#: build/blocks/index.js:39946
 msgid "Provides a nice download with an icon."
 msgstr "Erstellt einen Download-Link mit Icon."
 
-#: build/blocks/index.js:1
+#: build/blocks/index.js:40039
 msgid "Open in new tab"
 msgstr "In neuem Tab öffnen"
 
-#: build/blocks/index.js:1
+#: build/blocks/index.js:40060
 msgctxt "placeholder"
 msgid "Filename"
 msgstr "Dateiname"
 
-#: build/blocks/index.js:1
+#: build/blocks/index.js:40144
+msgctxt "download icon panel title"
+msgid "Icon"
+msgstr ""
+
+#: build/blocks/index.js:40146
+msgid "Use Dashicon"
+msgstr "Dashicon verwenden"
+
+#: build/blocks/index.js:40150
+msgid "Select icon"
+msgstr "Icon auswählen"
+
+#: build/blocks/index.js:40170
+msgctxt "border panel title"
+msgid "Border"
+msgstr "Umrandung"
+
+#: build/blocks/index.js:40172
+msgid "Border style"
+msgstr "Umrahmungsstil"
+
+#: build/blocks/index.js:40176
+msgid "Hidden"
+msgstr "Versteckt"
+
+#: build/blocks/index.js:40179
+msgid "Solid"
+msgstr "Solide"
+
+#: build/blocks/index.js:40182
+msgid "Dashed"
+msgstr "Gestrichelt"
+
+#: build/blocks/index.js:40185
+msgid "Dotted"
+msgstr "Gepunktet"
+
+#: build/blocks/index.js:40250
 msgctxt "block title"
 msgid "Footnote"
 msgstr "Fußnote"
 
-#: build/blocks/index.js:1
+#: build/blocks/index.js:40251
 msgid "Puts an asterisk and small text."
 msgstr "Zeigt einen Stern an und gibt kleinen Text aus."
 
 #. translators: Footnote block example
-#: build/blocks/index.js:3
+#: build/blocks/index.js:40260
 msgid "Some Footnote text"
 msgstr "Fußnoten-text"
 
-#: build/blocks/index.js:3
+#: build/blocks/index.js:40290
 msgctxt "placeholder"
 msgid "Footnote"
 msgstr "Fußnote"
 
-#: build/blocks/index.js:3
-msgid "Ordering"
-msgstr "Sortierung"
-
-#: build/blocks/index.js:3
-msgctxt "Label for selecting order of posts"
-msgid "Order by"
-msgstr "Sortieren nach"
-
-#: build/blocks/index.js:3
-msgid "ID"
-msgstr ""
-
-#: build/blocks/index.js:3
-msgid "Name"
-msgstr ""
-
-#: build/blocks/index.js:3
-msgid "Date"
-msgstr "Datum"
-
-#: build/blocks/index.js:3
-msgid "Modified"
-msgstr "Geändert"
-
-#: build/blocks/index.js:3
-msgid "Menu order"
-msgstr "Menü Reihenfolge"
-
-#: build/blocks/index.js:3
-msgctxt "Label for selecting order of posts"
-msgid "Order"
-msgstr "Reihenfolge"
-
-#: build/blocks/index.js:3
-msgid "Descending"
-msgstr "Absteigend"
-
-#: build/blocks/index.js:3
-msgid "Ascending"
-msgstr "Aufsteigend"
-
-#: build/blocks/index.js:3
-msgid "Loading"
-msgstr "Lädt"
-
-#: build/blocks/index.js:3
-msgid "No Post Types found"
-msgstr "Keine Beitragstypen gefunden"
-
-#: build/blocks/index.js:3
-msgctxt "Label for post type selector"
-msgid "Post Type"
-msgstr "Beitragstyp"
-
-#: build/blocks/index.js:3
-msgid "Select a post type"
-msgstr "Beitragstyp auswählen"
-
-#: build/blocks/index.js:3
-msgid "No posts found"
-msgstr "Keine Beiträge gefunden"
-
-#: build/blocks/index.js:3
-msgctxt "Label for selecting post"
-msgid "Post to index children of"
-msgstr "Beitrag, für den Kinder angezeigt werden sollen"
-
-#: build/blocks/index.js:3
-msgid "Select a post"
-msgstr "Beitrag auswählen"
-
-#: build/blocks/index.js:3
-msgid "Top level"
-msgstr "Hauptebene"
-
-#: build/blocks/index.js:3
+#: build/blocks/index.js:40420
 msgctxt "block title"
 msgid "Index"
 msgstr ""
 
-#: build/blocks/index.js:3
+#: build/blocks/index.js:40421
 msgid "Displays all children of selected page as an index."
 msgstr "Zeit alle Kinder der gewählten Seite als Index an."
 
-#: build/blocks/index.js:3
-msgid "Remove"
-msgstr "Entfernen"
+#: build/blocks/index.js:40511
+msgid "Ordering"
+msgstr "Sortierung"
 
-#: build/blocks/index.js:3
-msgid "Tier"
-msgstr "Stufe"
+#: build/blocks/index.js:40513
+msgctxt "Label for selecting order of posts"
+msgid "Order by"
+msgstr "Sortieren nach"
 
-#: build/blocks/index.js:3
-msgid "Description"
-msgstr "Beschreibung"
+#: build/blocks/index.js:40516
+msgid "ID"
+msgstr ""
 
-#: build/blocks/index.js:3
-msgid "Content"
-msgstr "Inhalt"
+#: build/blocks/index.js:40522
+msgid "Name"
+msgstr ""
 
-#: build/blocks/index.js:3
+#: build/blocks/index.js:40525
+msgid "Date"
+msgstr "Datum"
+
+#: build/blocks/index.js:40528
+msgid "Modified"
+msgstr "Geändert"
+
+#: build/blocks/index.js:40531
+msgid "Menu order"
+msgstr "Menü Reihenfolge"
+
+#: build/blocks/index.js:40536
+msgctxt "Label for selecting order of posts"
+msgid "Order"
+msgstr "Reihenfolge"
+
+#: build/blocks/index.js:40539
+msgid "Descending"
+msgstr "Absteigend"
+
+#: build/blocks/index.js:40542
+msgid "Ascending"
+msgstr "Aufsteigend"
+
+#: build/blocks/index.js:40578 build/blocks/index.js:40590
+msgid "Loading"
+msgstr "Lädt"
+
+#: build/blocks/index.js:40578
+msgid "No Post Types found"
+msgstr "Keine Beitragstypen gefunden"
+
+#: build/blocks/index.js:40579
+msgctxt "Label for post type selector"
+msgid "Post Type"
+msgstr "Beitragstyp"
+
+#: build/blocks/index.js:40583
+msgid "Select a post type"
+msgstr "Beitragstyp auswählen"
+
+#: build/blocks/index.js:40590
+msgid "No posts found"
+msgstr "Keine Beiträge gefunden"
+
+#: build/blocks/index.js:40591
+msgctxt "Label for selecting post"
+msgid "Post to index children of"
+msgstr "Beitrag, für den Kinder angezeigt werden sollen"
+
+#: build/blocks/index.js:40595
+msgid "Select a post"
+msgstr "Beitrag auswählen"
+
+#: build/blocks/index.js:40599
+msgid "Top level"
+msgstr "Hauptebene"
+
+#: build/blocks/index.js:40647
 msgid "Tier List"
 msgstr "Stufen-Liste"
 
-#: build/blocks/index.js:3
+#: build/blocks/index.js:40648
 msgid "List of tiers."
 msgstr "Eine Liste an Stufen."
 
-#: build/blocks/index.js:3
-msgid "Title {0}"
-msgid_plural "Title {0}"
-msgstr[0] "Titel"
-msgstr[1] "Titel"
+#. translators: Title numbers (list of example titles)
+#: build/blocks/index.js:40656 build/blocks/index.js:40662
+msgid "Title %d"
+msgid_plural "Title %d"
+msgstr[0] "Titel %d"
+msgstr[1] "Titel %d"
 
-#: build/blocks/index.js:3
+#: build/blocks/index.js:40657
 msgid "Some text"
 msgstr "Text"
 
-#: build/blocks/index.js:3
+#: build/blocks/index.js:40663
 msgid "Some more text"
 msgstr "Mehr text"
 
-#: build/blocks/index.js:3
-msgid "Add Element"
-msgstr "Hinzufügen"
+#: build/blocks/index.js:40755
+msgid "Tier Item"
+msgstr "Stufen-Liste Element"
 
-#: build/blocks/index.js:3
-msgid "Clear"
-msgstr "Leeren"
+#: build/blocks/index.js:40756
+msgid "Item element, to be used in the tier list."
+msgstr "Listenelement, für Stufen-Liste."
+
+#: build/blocks/index.js:40799
+msgid "Tier"
+msgstr "Stufe"
+
+#: build/blocks/index.js:40807
+msgid "Description"
+msgstr "Beschreibung"
+
+#: build/blocks/index.js:40813
+msgid "Content"
+msgstr "Inhalt"
+
+#~ msgid "Remove"
+#~ msgstr "Entfernen"
+
+#~ msgid "Title {0}"
+#~ msgid_plural "Title {0}"
+#~ msgstr[0] "Titel"
+#~ msgstr[1] "Titel"
+
+#~ msgid "Add Element"
+#~ msgstr "Hinzufügen"
+
+#~ msgid "Clear"
+#~ msgstr "Leeren"

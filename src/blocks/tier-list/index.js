@@ -25,6 +25,7 @@ registerBlockType(`${blockBase}/tier-list`, {
             {
                 name: `${blockBase}/tier-item`,
                 attributes: {
+                    /** translators: Title numbers (list of example titles) */
                     title: sprintf(_n('Title %d', 'Title %d', 1, 'theme-piber'), 1),
                     text: __('Some text', 'theme-piber'),
                 },
