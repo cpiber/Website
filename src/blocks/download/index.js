@@ -21,6 +21,9 @@ registerBlockType(`${blockBase}/download`, {
     ),
     category: 'widgets',
     icon: 'download',
+    supports: {
+        anchor: true,
+    },
     attributes: {
         usedashicon: {
             type: 'boolean',

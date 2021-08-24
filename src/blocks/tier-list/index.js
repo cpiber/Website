@@ -39,6 +39,10 @@ registerBlockType(`${blockBase}/tier-list`, {
             },
         ],
     },
+    supports: {
+        anchor: true,
+        html: false,
+    },
     attributes: {
         id: {
             type: 'string',

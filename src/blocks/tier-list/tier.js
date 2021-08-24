@@ -20,6 +20,9 @@ registerBlockType(`${blockBase}/tier-item`, {
     category: 'widgets',
     icon: 'marker',
     parent: [`${blockBase}/tier-list`],
+    supports: {
+        anchor: true,
+    },
     attributes: {
         title: {
             type: 'string',

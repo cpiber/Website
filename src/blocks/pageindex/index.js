@@ -19,6 +19,9 @@ registerBlockType(`${blockBase}/index`, {
     ),
     category: 'widgets',
     icon: 'admin-page',
+    supports: {
+        anchor: true,
+    },
     attributes: {
         posttype: {
             type: 'string',

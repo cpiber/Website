@@ -32,6 +32,9 @@ registerBlockType(`${blockBase}/footnote`, {
         },
     },
     transforms,
+    supports: {
+        anchor: true,
+    },
     attributes: {
         text: {
             type: 'string',

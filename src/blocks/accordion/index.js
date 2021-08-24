@@ -23,6 +23,9 @@ registerBlockType(`${blockBase}/accordion`, {
     ),
     category: 'widgets',
     icon: 'table-row-after',
+    supports: {
+        anchor: true,
+    },
     attributes: {
         id: {
             type: 'string',
