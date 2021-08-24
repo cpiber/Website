@@ -1,4 +1,4 @@
-import { InnerBlocks, store as blockEditorStore, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { useSelect } from '@wordpress/data';
 import { sprintf, _n, __ } from '@wordpress/i18n';
@@ -50,7 +50,7 @@ registerBlockType(`${blockBase}/tier-list`, {
     edit: ({ clientId }) => {
         const blockProps = useBlockProps();
         // https://github.com/WordPress/gutenberg/blob/1971a3c205b56879683c2a9e426c4c3cdba805ac/packages/block-library/src/column/edit.js#L46
-        const hasChildBlocks = useSelect(select => select(blockEditorStore).getBlockOrder(clientId).length > 0, [clientId]);
+        const hasChildBlocks = useSelect(select => select('core/block-editor').getBlockOrder(clientId).length > 0, [clientId]);
         return (
             <div {...blockProps}>
                 <InnerBlocks

@@ -1,4 +1,4 @@
-import { RichText, store as blockEditorStore, useBlockProps } from "@wordpress/block-editor";
+import { RichText, useBlockProps } from "@wordpress/block-editor";
 import { registerBlockType } from '@wordpress/blocks';
 import { Flex, FlexBlock } from "@wordpress/components";
 import { useSelect } from '@wordpress/data';
@@ -40,7 +40,7 @@ registerBlockType(`${blockBase}/tier-item`, {
         const { title, text } = attributes;
 
         const { id } = useSelect(select => {
-            const { getBlockRootClientId, getBlockAttributes } = select(blockEditorStore);
+            const { getBlockRootClientId, getBlockAttributes } = select('core/block-editor');
             const rootId = getBlockRootClientId(clientId);
             return getBlockAttributes(rootId);
         }, [clientId]);
