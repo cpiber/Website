@@ -19,7 +19,11 @@ jQuery($ => {
                 $(`[data-accordion-name="${this.name}"]`).css('height', 0).parent().addClass('closed');
             setAccHeight(this);
         });
-    $(accInput).each((_, e) => setAccHeight(e));
+    
+    const resetAccHeights = () => $(accInput).each((_, e) => setAccHeight(e));
+    $(window).on('resize', resetAccHeights);
+    resetAccHeights();
+
     $('.wp-block-theme-piber-accordion')
         .filter((_, e) => e.nextElementSibling === null || !e.nextElementSibling.classList.contains('wp-block-theme-piber-accordion'))
         .addClass('last-in-group');

@@ -116,7 +116,7 @@ registerBlockType(`${blockBase}/accordion`, {
                         style={{ backgroundColor: color }}
                     />
                 </label>
-                <div className={`${content} block-accordion--content`} data-accordion-name={name} style={{ borderColor: color }}>
+                <div className={`${content} block-accordion--content`} data-accordion-name={name || true} style={{ borderColor: color }}>
                     <InnerBlocks.Content />
                 </div>
             </div>
