@@ -4,7 +4,7 @@ const gulpif = require('gulp-if');
 const concat = require('gulp-concat');
 
 const sass = require('gulp-sass')(require('sass'));
-const Fiber = require('fibers');
+const fiber = require('fibers');
 
 const postcss = require('gulp-postcss')
 const postcssPresetEnv = require('postcss-preset-env');
@@ -14,36 +14,32 @@ const path = require("path");
 const fs = require("fs");
 
 
-const input = './src/css/**/!(*.module).scss';
 const inputModule = './src/css/**/*.module.scss';
-const inputWatch = './src/css/**/*.scss';
 const base = 'src/css';
 const output = 'build/css';
 
-function tasksass(modules = false, minify = false) {
+function tasksass(minify = false) {
     return function buildSass () {
         const postcssplugins = [
             postcssPresetEnv(),
-        ];
-        if (modules) {
-            postcssplugins.push(postcssModules({
+            postcssModules({
                 getJSON: function (cssFileName, json, outputFileName) {
-                    const outFileName = `${outputFileName.replace(base, output)}.php`;
+                    const outFileName = `${outputFileName.replace(base, output).replace(/\.\w+$/, '')}.php`;
                     fs.mkdirSync(path.dirname(outFileName), { recursive: true });
                     fs.writeFileSync(outFileName, `<?php return ${toPHPArray(json)};`);
                 }
-            }));
-        }
-        return src(!modules ? input : inputModule)
+            }),
+        ];
+        return src(inputModule)
             .pipe(gulpif(!minify, sourcemaps.init()))
             .pipe(postcss(postcssplugins, { syntax: require('postcss-scss') }))
             .pipe(sass({
-                fiber: Fiber,
+                fiber,
                 outputStyle: minify ? 'compressed' : 'expanded',
             }).on('error', sass.logError))
             .pipe(concat('modules.css'))
             .pipe(gulpif(!minify, sourcemaps.write('.')))
-            .pipe(dest('./build/css'));
+            .pipe(dest(output));
     }
 }
 
@@ -60,16 +56,10 @@ function isPrimitive(val) {
 }
 
 
-const tSass = tasksass();
-const wSass = () => watch(inputWatch, tSass);
-const tSassModules = tasksass(true);
-const wSassModules = () => watch(inputWatch, tSassModules);
+const tSassModules = tasksass();
+const wSassModules = () => watch(inputModule, tSassModules);
 
 module.exports = exports = {
-    // sass: tSass,
-    // sassmodules: tSassModules,
-    // 'sass:build': tasksass(false, true),
-    'sassmodules:build': tasksass(true, true),
-    // 'sass:watch': series(tSass, wSass),
+    'sassmodules:build': tasksass(true),
     'sassmodules:watch': series(tSassModules, wSassModules),
 }
