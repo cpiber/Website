@@ -6,6 +6,7 @@ import {
     split,
     toHTMLString, __UNSTABLE_LINE_SEPARATOR
 } from '@wordpress/rich-text';
+import { blockBase } from '../../config';
 
 const transforms = {
     from: [

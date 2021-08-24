@@ -1,12 +1,13 @@
 import { InnerBlocks, RichText, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
+import { useSelect } from '@wordpress/data';
 import { _x, __ } from '@wordpress/i18n';
 import uniqueString from 'unique-string';
 import { blockBase } from '../../config';
 import eStyles from './editor.module.scss';
 import { Inspector } from './inspector';
 import styles from './style.module.scss';
-const { inner } = eStyles;
+const { title: eTitle, inner } = eStyles;
 const { heading, input, content } = styles;
 
 registerBlockType(`${blockBase}/accordion`, {
@@ -60,9 +61,10 @@ registerBlockType(`${blockBase}/accordion`, {
             type: 'boolean',
         },
     },
-    edit: ({ attributes, setAttributes, isSelected }) => {
+    edit: ({ attributes, setAttributes, isSelected, clientId }) => {
         const blockProps = useBlockProps();
         const { title, name, type, checked, color, hide } = attributes;
+        const isParentOfSelectedBlock = useSelect(select => select('core/block-editor').hasSelectedInnerBlock(clientId, true));
 
         return (
             <div {...blockProps}>
@@ -71,9 +73,11 @@ registerBlockType(`${blockBase}/accordion`, {
                     value={title}
                     onChange={t => setAttributes({ title: t })}
                     tagName='h2'
+                    className={eTitle}
+                    style={{ backgroundColor: color }}
                 />
-                <div className={inner}>
-                    {isSelected || !hide ? (<InnerBlocks />) : (<span>...</span>)}
+                <div className={inner} style={{ borderColor: color }}>
+                    {isSelected || isParentOfSelectedBlock || !hide ? (<InnerBlocks />) : (<span>...</span>)}
                 </div>
                 <Inspector
                     name={name}

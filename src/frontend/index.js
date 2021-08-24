@@ -1,10 +1,8 @@
+import jQuery from 'jquery';
 import './style.scss';
 
 const accInput = '.wp-block-theme-piber-accordion .block-accordion--input';
 
-/**
- * @type {import('jquery')}
- */
 jQuery($ => {
     /**
      * @param {HTMLInputElement} e Input

@@ -48,7 +48,6 @@ registerBlockType(`${blockBase}/tier-list`, {
         blockProps.className += ` ${block}`;
         return (
             <div {...blockProps}>
-                {/* <h2>{__('Tier List', 'theme-piber')}</h2> */}
                 <List
                     values={list}
                     removableByMove
@@ -68,11 +67,11 @@ registerBlockType(`${blockBase}/tier-list`, {
                                     setAttributes({ list: newlist });
                                 }}
                                 onRemove={() => setAttributes({ list: arrayRemove(list, index) })}
-                            ></Tier>
+                            />
                         </li>
                     }
                 />
-                { (isSelected || (!isSelected && list.length === 0)) && (
+                {(isSelected || (!isSelected && list.length === 0)) && (
                     <div className={controls}>
                         <Button isPrimary onClick={() => setAttributes({ list: [...list, {}] })}>{__('Add Element', 'theme-piber')}</Button>
                         {list.length !== 0 && <Button isLink isDestructive isSmall onClick={() => setAttributes({ list: [] })}>{__('Clear', 'theme-piber')}</Button>}
