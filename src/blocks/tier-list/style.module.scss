@@ -1,0 +1,73 @@
+@import '../../css/variables.scss';
+
+.block {
+    pattern {
+        fill: currentColor;
+    }
+}
+
+.content {
+    display: flex;
+}
+
+.side {
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 8px;
+    padding: 0 32px;
+    position: relative;
+    margin: calc(16px + 0.75em) 0 calc(-16px - 0.75em); // start in the middle of heading and go to next
+    
+    svg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 8px;
+        height: 100%;
+    }
+}
+.content:last-child .side {
+    margin: calc(16px + 0.75em) 0 calc(16px + 0.5em); // start in the middle of heading and leave some space at bottom
+}
+
+.item {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+
+    .title {
+        font-size: 1.25em;
+        margin: 16px 0;
+        width: 30%;
+        flex-shrink: 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            background-color: currentColor;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            position: absolute;
+            left: -37px;
+            top: 0.25em;
+        }
+
+        @media (max-width: 700px) {
+            width: 35%;
+        }
+    }
+
+    @media ($mobile) {
+        flex-direction: column;
+        gap: 0;
+
+        .title {
+            width: 100%;
+        }
+
+        .text {
+            margin-top: 0;
+        }
+    }
+}

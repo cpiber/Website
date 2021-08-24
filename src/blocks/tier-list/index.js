@@ -1,13 +1,12 @@
-import { useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, store as blockEditorStore, useBlockProps } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
-import { Button } from '@wordpress/components';
-import { _n, __ } from '@wordpress/i18n';
-import { arrayMove, arrayRemove, List } from 'react-movable';
+import { useSelect } from '@wordpress/data';
+import { sprintf, _n, __ } from '@wordpress/i18n';
+import uniqueString from 'unique-string';
 import { blockBase } from '../../config';
-import styles from './editor.module.scss';
-import { Tier } from './tier';
-import transforms from "./transforms";
-const { block, controls, item } = styles;
+import styles from './style.module.scss';
+import './tier';
+const { block } = styles;
 
 registerBlockType(`${blockBase}/tier-list`, {
     apiVersion: 2,
@@ -22,61 +21,59 @@ registerBlockType(`${blockBase}/tier-list`, {
     category: 'widgets',
     icon: 'editor-ol',
     example: {
-        attributes: {
-            list: [
-                {
-                    title: _n('Title {0}', 'Title {0}', 1, 'theme-piber').format(1),
-                    text: __('Some text', 'theme-piber')
+        innerBlocks: [
+            {
+                name: `${blockBase}/tier-item`,
+                attributes: {
+                    title: sprintf(_n('Title %d', 'Title %d', 1, 'theme-piber'), 1),
+                    text: __('Some text', 'theme-piber'),
                 },
-                {
-                    title: _n('Title {0}', 'Title {0}', 2, 'theme-piber').format(2),
-                    text: __('Some more text', 'theme-piber')
+            },
+            {
+                name: `${blockBase}/tier-item`,
+                attributes: {
+                    title: sprintf(_n('Title %d', 'Title %d', 2, 'theme-piber'), 2),
+                    text: __('Some more text', 'theme-piber'),
                 },
-            ],
-        },
+            },
+        ],
     },
-    transforms,
     attributes: {
-        list: {
-            type: 'array',
-            default: [],
-        },
+        id: {
+            type: 'string',
+            source: 'attribute',
+            selector: 'pattern',
+            attribute: 'id',
+        }
     },
-    edit: ({ attributes, setAttributes, isSelected }) => {
+    edit: ({ clientId }) => {
         const blockProps = useBlockProps();
-        const { list } = attributes;
-        blockProps.className += ` ${block}`;
+        // https://github.com/WordPress/gutenberg/blob/1971a3c205b56879683c2a9e426c4c3cdba805ac/packages/block-library/src/column/edit.js#L46
+        const hasChildBlocks = useSelect(select => select(blockEditorStore).getBlockOrder(clientId).length > 0, [clientId]);
         return (
             <div {...blockProps}>
-                <List
-                    values={list}
-                    removableByMove
-                    onChange={({ oldIndex, newIndex }) =>
-                        setAttributes({ list: newIndex !== -1 ? arrayMove(list, oldIndex, newIndex) : arrayRemove(list, oldIndex) })
-                    }
-                    renderList={({ children, props }) => <ul {...props}>{children}</ul>}
-                    renderItem={({ value, props, index, isDragged }) =>
-                        <li {...props} className={item}>
-                            <Tier
-                                value={value}
-                                isDragged={isDragged}
-                                isSelected={isSelected}
-                                onChange={val => {
-                                    const newlist = [...list];
-                                    newlist[index] = val;
-                                    setAttributes({ list: newlist });
-                                }}
-                                onRemove={() => setAttributes({ list: arrayRemove(list, index) })}
-                            />
-                        </li>
-                    }
+                <InnerBlocks
+                    allowedBlocks={[`${blockBase}/tier-item`]}
+                    renderAppender={hasChildBlocks ? undefined : InnerBlocks.ButtonBlockAppender}
                 />
-                {(isSelected || (!isSelected && list.length === 0)) && (
-                    <div className={controls}>
-                        <Button isPrimary onClick={() => setAttributes({ list: [...list, {}] })}>{__('Add Element', 'theme-piber')}</Button>
-                        {list.length !== 0 && <Button isLink isDestructive isSmall onClick={() => setAttributes({ list: [] })}>{__('Clear', 'theme-piber')}</Button>}
-                    </div>
-                )}
+            </div>
+        );
+    },
+    save: ({ attributes }) => {
+        const blockProps = useBlockProps.save({
+            className: block,
+        });
+        const id = attributes.id || uniqueString();
+        return (
+            <div {...blockProps}>
+                <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+                    <defs>
+                        <pattern id={id} patternUnits="userSpaceOnUse" x="0" y="0" width="8" height="46">
+                            <use href="#line-segment" x="0" y="8" width="8" height="30" />
+                        </pattern>
+                    </defs>
+                </svg>
+                <InnerBlocks.Content />
             </div>
         );
     },

@@ -2,15 +2,15 @@
 
 namespace piber\website\blocks;
 
-require "blocks/tier-list.php";
 require "blocks/index.php";
 
 function register_blocks($script_base) {
     $base = "theme-piber";
 
     $blocks = array(
-        'tier-list' => new BlockTierList(),
         'index'     => new BlockIndex(),
+        'tier-list' => null,
+        'tier-item' => null,
         'footnote'  => null,
         'download'  => null,
         'accordion' => null,

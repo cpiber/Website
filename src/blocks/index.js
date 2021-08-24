@@ -1,5 +1,3 @@
-
-import '../common';
 import './accordion';
 import './download';
 import './footnote';

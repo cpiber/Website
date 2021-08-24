@@ -100,7 +100,7 @@ registerBlockType(`${blockBase}/accordion`, {
         const id = attributes.id || uniqueString();
  
         return (
-            <div { ...blockProps }>
+            <div {...blockProps}>
                 <input
                     id={id}
                     className={`${input} block-accordion--input`}
