@@ -9,14 +9,14 @@ export const acc = $ => {
      * @param {HTMLInputElement} e Input
      */
     const setAccHeight = e => {
-        const $content = $(e).siblings('[data-accordion-name]');
+        const $content = $(e).siblings('.block-accordion--content');
         $content.css('height', e.checked ? $content.prop('scrollHeight') : 0)
             .parent().toggleClass('closed', !e.checked);
     };
 
     $(document.body).on('change', accInput, function () {
         if (this.type === 'radio')
-            $(`[data-accordion-name="${this.name}"]`).css('height', 0).parent().addClass('closed');
+            $(`[name="${this.name}"][type=radio]`).parent().addClass('closed').children('.block-accordion--content').css('height', 0);
         setAccHeight(this);
     });
 
@@ -28,4 +28,8 @@ export const acc = $ => {
     $('.wp-block-theme-piber-accordion')
         .filter((_, e) => e.nextElementSibling === null || !e.nextElementSibling.classList.contains('wp-block-theme-piber-accordion'))
         .addClass('last-in-group');
+    
+    const expandHash = () => $(location.hash).filter('.wp-block-theme-piber-accordion').find('input:not(:checked)').trigger('click');
+    $(window).on('hashchange', expandHash);
+    expandHash();
 }
