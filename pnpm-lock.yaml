@@ -32,13 +32,9 @@ specifiers:
   postcss-scss: ^4.0.0
   react: ^0.14.0 || ^15.0.0 || ^16.0.0
   react-dom: ^0.14.0 || ^15.0.0 || ^16.0.0
-  react-movable: ^2.5.4
   redux: ^4.1.0
   rimraf: ^3.0.2
   sass: ^1.38.0
-
-dependencies:
-  react-movable: 2.5.4_react-dom@16.14.0+react@16.14.0
 
 devDependencies:
   '@babel/core': 7.15.0
@@ -11461,16 +11457,6 @@ packages:
     dependencies:
       moment: 2.29.1
     dev: true
-
-  /react-movable/2.5.4_react-dom@16.14.0+react@16.14.0:
-    resolution: {integrity: sha512-F+Ml4Il9S7uyY2Nr/UzwnXxWewwsHdQkmwgzAjk+Dsz73sy2yCJk7GkQkdqmh8W6XXTlviepz1VA0eHUWh9MZQ==}
-    peerDependencies:
-      react: ^16.3.0-0 || ^17.0.0-0
-      react-dom: ^16.3.0-0 || ^17.0.0-0
-    dependencies:
-      react: 16.14.0
-      react-dom: 16.14.0_react@16.14.0
-    dev: false
 
   /react-native-url-polyfill/1.2.0:
     resolution: {integrity: sha512-hpLZ8RyS3oGVyTOe/HjoqVoCOSkeJvrCoEB3bJsY7t9uh7kpQDV6kgvdlECEafYpxe3RzMrKLVcmWRbPU7CuAw==}
