@@ -120,7 +120,9 @@ registerBlockType(`${blockBase}/accordion`, {
                     />
                 </label>
                 <div className={`${content} block-accordion--content`} style={{ borderColor: color }}>
-                    <InnerBlocks.Content />
+                    <div className="block-accordion--content--inner">
+                        <InnerBlocks.Content />
+                    </div>
                 </div>
             </div>
         )

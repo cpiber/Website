@@ -1,3 +1,4 @@
+if (!window.ResizeObserver) window.ResizeObserver = function() { return { observe: () => { /* to avoid errors */ } } };
 
 const accInput = '.wp-block-theme-piber-accordion .block-accordion--input';
 
@@ -10,7 +11,8 @@ export const acc = $ => {
      */
     const setAccHeight = e => {
         const $content = $(e).siblings('.block-accordion--content');
-        $content.css('height', e.checked ? $content.prop('scrollHeight') : 0)
+        const h = e.checked ? $content.prop('scrollHeight') : 0;
+        $content.toggleClass('in-transition', h !== Math.round($content.height())).css('height', h)
             .parent().toggleClass('closed', !e.checked);
     };
 
@@ -18,11 +20,17 @@ export const acc = $ => {
         if (this.type === 'radio')
             $(`[name="${this.name}"][type=radio]`).parent().addClass('closed').children('.block-accordion--content').css('height', 0);
         setAccHeight(this);
+    }).on('transitionend', '.block-accordion--content', function () {
+        $(this).removeClass('in-transition');
     });
 
-    const resetAccHeights = () => $(accInput).each((_, e) => setAccHeight(e));
+    const resetAccHeights = () => $(accInput).each((_, e) => {
+        $(e).siblings('.block-accordion--content').css('height', '');
+        setTimeout(setAccHeight, 0, e);
+    });
     $(window).on('resize', resetAccHeights);
-    $(accInput).find('img').on('load', resetAccHeights);
+    const observer = new ResizeObserver(resetAccHeights);
+    $('.block-accordion--content').each((_, e) => observer.observe(e.firstElementChild)).find('img').on('load', resetAccHeights);
     resetAccHeights();
 
     $('.wp-block-theme-piber-accordion')
